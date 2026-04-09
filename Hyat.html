@@ -1,0 +1,1872 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>حياة — ما هي بطارية جسمك؟</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Sans+Arabic:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1E2B4A;
+      --navy-d: #141e35;
+      --coral: #D4694A;
+      --coral-l: #E57F5E;
+      --sage: #8FAF88;
+      --sage-l: #B1C6A5;
+      --lav: #B89EC4;
+      --cream: #F4F1EC;
+      --white: #FAFAF8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif;
+      background: var(--navy-d);
+      color: var(--white);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--navy-d);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--coral);
+      border-radius: 2px;
+    }
+
+    /* ── PAGE SYSTEM ── */
+    .page {
+      display: none;
+      min-height: 100vh;
+    }
+
+    .page.active {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── SHARED HEADER ── */
+    .site-header {
+      padding: 20px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      flex-shrink: 0;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .logo-text {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .logo-sub {
+      font-size: 9px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.3);
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      display: block;
+      margin-top: -2px;
+    }
+
+    /* ══════════════════════════
+   LANDING PAGE
+══════════════════════════ */
+    #page-landing {
+      background:
+        radial-gradient(ellipse 60% 70% at 85% 30%, rgba(212, 105, 74, 0.13) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 10% 75%, rgba(143, 175, 136, 0.08) 0%, transparent 55%),
+        var(--navy-d);
+    }
+
+    .landing-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 32px;
+      text-align: center;
+    }
+
+    .landing-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212, 105, 74, 0.1);
+      border: 1px solid rgba(212, 105, 74, 0.2);
+      border-radius: 50px;
+      padding: 8px 20px;
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--coral-l);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .tag-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--coral);
+      animation: blink 1.5s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: 0.3
+      }
+    }
+
+    .landing-h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(38px, 8vw, 72px);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .landing-h1 em {
+      font-style: italic;
+      color: var(--coral-l);
+    }
+
+    .landing-sub {
+      font-size: 16px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.8;
+      max-width: 480px;
+      margin: 0 auto 40px;
+    }
+
+    .landing-stats {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .lstat-n {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--coral);
+      line-height: 1;
+    }
+
+    .lstat-l {
+      font-size: 11px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.35);
+      margin-top: 6px;
+      letter-spacing: .04em;
+    }
+
+    .btn-start {
+      padding: 18px 56px;
+      background: var(--coral);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .25s;
+    }
+
+    .btn-start:hover {
+      background: var(--coral-l);
+      transform: translateY(-2px);
+      box-shadow: 0 16px 40px rgba(212, 105, 74, 0.3);
+    }
+
+    .landing-note {
+      margin-top: 20px;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    /* ══════════════════════════
+   QUIZ PAGE
+══════════════════════════ */
+    #page-quiz {
+      background: var(--cream);
+      color: var(--navy);
+    }
+
+    #page-quiz .site-header {
+      background: var(--navy);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .quiz-progress {
+      background: var(--navy);
+      padding: 0 32px 20px;
+      flex-shrink: 0;
+    }
+
+    .pip-row {
+      display: flex;
+      gap: 5px;
+    }
+
+    .pip {
+      flex: 1;
+      height: 3px;
+      border-radius: 2px;
+      background: rgba(255, 255, 255, 0.12);
+      transition: background .3s;
+    }
+
+    .pip.done {
+      background: var(--coral);
+    }
+
+    .pip.active {
+      background: rgba(212, 105, 74, 0.5);
+    }
+
+    .quiz-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 36px 32px 28px;
+      max-width: 580px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .q-num {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--sage);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .q-text {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 5vw, 30px);
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--navy);
+      margin-bottom: 32px;
+    }
+
+    .opts {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .opt {
+      width: 100%;
+      padding: 16px 20px;
+      border-radius: 14px;
+      border: 1.5px solid rgba(30, 43, 74, 0.1);
+      background: white;
+      text-align: start;
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--navy);
+      cursor: pointer;
+      transition: all .18s;
+      line-height: 1.4;
+      position: relative;
+    }
+
+    .opt:hover {
+      border-color: rgba(212, 105, 74, 0.4);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(212, 105, 74, 0.1);
+    }
+
+    .opt.sel {
+      border-color: var(--coral);
+      background: rgba(212, 105, 74, 0.06);
+      font-weight: 400;
+    }
+
+    [dir="rtl"] .opt.sel::after {
+      content: '✓'; position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--coral); font-size: 16px;
+    }
+    [dir="ltr"] .opt.sel::after {
+      content: '✓'; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: var(--coral); font-size: 16px;
+    }
+
+    .quiz-footer {
+      margin-top: auto;
+      padding-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .anon-note {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 300;
+      color: rgba(30, 43, 74, 0.4);
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 17px;
+      background: var(--navy);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .2s;
+      opacity: .3;
+      pointer-events: none;
+    }
+
+    .submit-btn.on {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .submit-btn.on:hover {
+      background: #2a3d6b;
+    }
+
+    .submit-btn.on:active {
+      transform: scale(.98);
+    }
+
+    /* ══════════════════════════
+   RESULTS PAGE
+══════════════════════════ */
+    #page-results {
+      background: var(--cream);
+      color: var(--navy);
+    }
+
+    #page-results .site-header {
+      background: var(--navy);
+    }
+
+    .results-hero {
+      background: var(--navy);
+      padding: 36px 32px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .results-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 110%, rgba(212, 105, 74, 0.18) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .batt-visual {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .batt-shell {
+      width: 88px;
+      height: 48px;
+      border: 2.5px solid rgba(255, 255, 255, 0.4);
+      border-radius: 10px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      overflow: hidden;
+    }
+
+    .batt-shell::after {
+      content: '';
+      position: absolute;
+      right: -8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 0 3px 3px 0;
+    }
+
+    .batt-fill {
+      height: 100%;
+      border-radius: 5px;
+      width: 0%;
+      transition: width 1.2s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .batt-pct {
+      font-size: 52px;
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .batt-pct span {
+      font-size: 22px;
+      font-weight: 300;
+      opacity: .6;
+    }
+
+    .batt-label {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .res-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      max-width: 320px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .res-title em {
+      font-style: italic;
+      color: var(--coral-l);
+    }
+
+    .results-body {
+      max-width: 560px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 28px 24px 48px;
+    }
+
+    .res-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .r-card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      box-shadow: 0 2px 12px rgba(30, 43, 74, 0.06);
+    }
+
+    .r-card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .r-card h4 {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 5px;
+    }
+
+    .r-card p {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(30, 43, 74, 0.6);
+      line-height: 1.6;
+    }
+
+    .one-thing {
+      background: var(--navy);
+      border-radius: 20px;
+      padding: 28px 24px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .ot-label {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--sage);
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .ot-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.35;
+    }
+
+    .ot-text em {
+      font-style: italic;
+      color: var(--coral-l);
+    }
+
+    .cta-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .cta-main {
+      width: 100%;
+      padding: 18px;
+      background: var(--coral);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .cta-main:hover {
+      background: var(--coral-l);
+    }
+
+    .cta-sec {
+      width: 100%;
+      padding: 16px;
+      background: transparent;
+      color: rgba(30, 43, 74, 0.5);
+      border: 1.5px solid rgba(30, 43, 74, 0.12);
+      border-radius: 50px;
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .cta-sec:hover {
+      border-color: var(--coral);
+      color: var(--coral);
+    }
+
+    .share-note {
+      text-align: center;
+      font-size: 11px;
+      color: rgba(30, 43, 74, 0.3);
+      padding: 4px 0;
+    }
+
+    /* ══════════════════════════
+   ADMIN DASHBOARD
+══════════════════════════ */
+    #page-admin {
+      background: var(--navy-d);
+      overflow-y: auto;
+    }
+
+    #page-admin .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(20, 30, 53, 0.95);
+      backdrop-filter: blur(20px);
+    }
+
+    .admin-body {
+      padding: 36px 32px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .admin-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .admin-title em {
+      font-style: italic;
+      color: var(--coral-l);
+    }
+
+    .admin-sub {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 40px;
+    }
+
+    /* Summary cards */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+
+    .s-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: start;
+    }
+
+    .s-card-n {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--coral);
+      line-height: 1;
+    }
+
+    .s-card-l {
+      font-size: 11px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.35);
+      margin-top: 6px;
+      letter-spacing: .06em;
+    }
+
+    /* Battery distribution */
+    .dist-section {
+      margin-bottom: 40px;
+    }
+
+    .dist-title {
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .dist-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .dist-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .dist-lbl {
+      width: 110px;
+      flex-shrink: 0;
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.7);
+      text-align: start;
+    }
+
+    .dist-track {
+      flex: 1;
+      height: 36px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .dist-bar {
+      height: 100%;
+      border-radius: 8px;
+      width: 0%;
+      transition: width 1s cubic-bezier(.4, 0, .2, 1);
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+    }
+
+    .dist-pct {
+      font-size: 12px;
+      font-weight: 500;
+      color: white;
+    }
+
+    .dist-n {
+      width: 36px;
+      flex-shrink: 0;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.35);
+      text-align: end;
+    }
+
+    /* Q breakdown */
+    .q-breakdown {
+      margin-bottom: 40px;
+    }
+
+    .qb-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 14px;
+    }
+
+    .qb-q {
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .qb-opts {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .qb-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .qb-lbl {
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.5);
+      text-align: start;
+      width: 200px;
+      flex-shrink: 0;
+      line-height: 1.3;
+    }
+
+    .qb-track {
+      flex: 1;
+      height: 26px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .qb-bar {
+      height: 100%;
+      border-radius: 6px;
+      width: 0%;
+      transition: width 0.9s cubic-bezier(.4, 0, .2, 1);
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+    }
+
+    .qb-pct {
+      font-size: 11px;
+      font-weight: 500;
+      color: white;
+    }
+
+    .qb-n {
+      width: 28px;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.3);
+      text-align: end;
+    }
+
+    /* Individual responses table */
+    .resp-table-wrap {
+      overflow-x: auto;
+    }
+
+    .resp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .resp-table th {
+      text-align: start;
+      padding: 10px 14px;
+      font-size: 11px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.35);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .resp-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .resp-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .level-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 11px;
+      font-weight: 400;
+    }
+
+    .admin-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .admin-btn {
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .admin-btn-coral {
+      background: var(--coral);
+      color: white;
+      border: none;
+    }
+
+    .admin-btn-coral:hover {
+      background: var(--coral-l);
+    }
+
+    .admin-btn-ghost {
+      background: transparent;
+      color: rgba(255, 255, 255, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .admin-btn-ghost:hover {
+      color: white;
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .admin-btn-red {
+      background: rgba(212, 74, 74, 0.15);
+      color: rgba(255, 120, 120, 0.9);
+      border: 1px solid rgba(212, 74, 74, 0.25);
+    }
+
+    .admin-btn-red:hover {
+      background: rgba(212, 74, 74, 0.25);
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: rgba(255, 255, 255, 0.25);
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    .empty-icon {
+      font-size: 40px;
+      margin-bottom: 16px;
+    }
+
+    .section-heading {
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      margin-top: 40px;
+    }
+
+    /* ── ADMIN LOCK ── */
+    .admin-lock {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 48px 32px;
+      gap: 20px;
+    }
+
+    .lock-icon-big {
+      font-size: 48px;
+      margin-bottom: 8px;
+    }
+
+    .lock-title {
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .lock-sub {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.4);
+      font-weight: 300;
+      max-width: 300px;
+      line-height: 1.7;
+    }
+
+    .pin-input {
+      width: 180px;
+      padding: 14px 20px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 14px;
+      color: white;
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: .4em;
+      outline: none;
+    }
+
+    .pin-input:focus {
+      border-color: var(--coral);
+    }
+
+    .pin-submit {
+      padding: 14px 36px;
+      background: var(--coral);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .pin-submit:hover {
+      background: var(--coral-l);
+    }
+
+    .pin-error {
+      font-size: 12px;
+      color: rgba(212, 105, 74, 0.8);
+      min-height: 18px;
+    }
+
+    /* ── TOAST ── */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--navy);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50px;
+      padding: 12px 28px;
+      font-size: 13px;
+      color: var(--white);
+      transition: transform .3s ease;
+      z-index: 999;
+      white-space: nowrap;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      animation: fadeUp .35s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── MOBILE ── */
+    @media(max-width:600px) {
+      .site-header {
+        padding: 16px 20px;
+      }
+
+      .landing-body {
+        padding: 32px 20px;
+      }
+
+      .landing-stats {
+        gap: 24px;
+      }
+
+      .quiz-body {
+        padding: 28px 20px 20px;
+      }
+
+      .results-body {
+        padding: 24px 16px 40px;
+      }
+
+      .admin-body {
+        padding: 24px 16px;
+      }
+
+      .summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .dist-lbl {
+        width: 80px;
+        font-size: 11px;
+      }
+
+      .qb-lbl {
+        width: 130px;
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ════════════════════════════
+     LANDING
+════════════════════════════ -->
+  <div id="page-landing" class="page active">
+    <header class="site-header">
+      <div class="logo-wrap" onclick="goTo('page-landing')">
+        <img src="hayat logo -06.png" style="height: 36px; object-fit: contain;" alt="Hyat Logo" />
+        <div class="lang-switch" onclick="toggleLang(event)" style="cursor:pointer; display:flex; align-items:center; gap:6px; font-size:12px; font-weight:500; color:rgba(255,255,255,0.7); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.1); margin-inline-start:12px; transition:0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          <span class="lang-ind">EN</span>
+        </div>
+      </div>
+      <button class="admin-btn admin-btn-ghost" style="font-size:12px;padding:9px 20px;"
+        onclick="goTo('page-admin')">لوحة التحكم ↗</button>
+    </header>
+
+    <div class="landing-body">
+      <div class="landing-tag"><span class="tag-dot"></span> اليوم العالمي للصحة · 7 أبريل</div>
+      <h1 class="landing-h1">ما هي<br><em>بطارية جسمك؟</em></h1>
+      <p class="landing-sub">6 أسئلة صريحة، نتيجة فورية، بدون اسم ولا حساب. اكتشف أين تقف صحتك كمؤسس.</p>
+      <div class="landing-stats">
+        <div>
+          <div class="lstat-n">73%</div>
+          <div class="lstat-l">من المؤسسين يعانون<br>الإرهاق بصمت</div>
+        </div>
+        <div>
+          <div class="lstat-n">23%</div>
+          <div class="lstat-l">فقط يطلبون<br>أي دعم</div>
+        </div>
+        <div>
+          <div class="lstat-n">65%</div>
+          <div class="lstat-l">من فشل الشركات يبدأ<br>بصحة المؤسس</div>
+        </div>
+      </div>
+      <button class="btn-start" onclick="startQuiz()">ابدأ الاختبار ←</button>
+      <div class="landing-note">
+        <span>🔒</span> مجهول الهوية تماماً — اسمك لا يُجمع أبداً
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════
+     QUIZ
+════════════════════════════ -->
+  <div id="page-quiz" class="page">
+    <header class="site-header">
+      <div class="logo-wrap" onclick="goTo('page-landing')">
+        <img src="hayat logo -06.png" style="height: 36px; object-fit: contain;" alt="Hyat Logo" />
+        <div class="lang-switch" onclick="toggleLang(event)" style="cursor:pointer; display:flex; align-items:center; gap:6px; font-size:12px; font-weight:500; color:rgba(255,255,255,0.7); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.1); margin-inline-start:12px; transition:0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          <span class="lang-ind">EN</span>
+        </div>
+      </div>
+      <span id="q-header-label" style="font-size:12px;color:rgba(255,255,255,0.3);">سؤال 1 من 6</span>
+    </header>
+
+    <div class="quiz-progress">
+      <div class="pip-row" id="pips"></div>
+    </div>
+
+    <div class="quiz-body fade-up" id="quiz-body">
+      <div class="q-num" id="q-num">سؤال 1 من 6</div>
+      <div class="q-text" id="q-text"></div>
+      <div class="opts" id="opts"></div>
+      <div class="quiz-footer">
+        <div class="anon-note"><span style="font-size:14px;">🔒</span> مجهول الهوية — لا يتم جمع اسمك</div>
+        <button class="submit-btn" id="submit-btn" onclick="submitAnswer()">التالي ←</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════
+     RESULTS
+════════════════════════════ -->
+  <div id="page-results" class="page" style="overflow-y:auto;">
+    <header class="site-header">
+      <div class="logo-wrap">
+        <img src="hayat logo -06.png" style="height: 36px; object-fit: contain;" alt="Hyat Logo" />
+        <div class="lang-switch" onclick="toggleLang(event)" style="cursor:pointer; display:flex; align-items:center; gap:6px; font-size:12px; font-weight:500; color:rgba(255,255,255,0.7); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.1); margin-inline-start:12px; transition:0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          <span class="lang-ind">EN</span>
+        </div>
+      </div>
+      <span style="font-size:12px;color:rgba(255,255,255,0.3);">نتيجتك</span>
+    </header>
+
+    <div class="results-hero">
+      <div class="batt-visual">
+        <div class="batt-shell">
+          <div class="batt-fill" id="bfill"></div>
+        </div>
+        <div class="batt-pct" id="bpct">0<span>%</span></div>
+        <div class="batt-label" id="blabel">جاري الحساب…</div>
+      </div>
+      <div class="res-title" id="rtitle"></div>
+    </div>
+
+    <div class="results-body">
+      <div class="res-cards" id="rcards"></div>
+      <div class="one-thing">
+        <div class="ot-label">الشيء الواحد الذي تفعله الآن</div>
+        <div class="ot-text" id="ot-text"></div>
+      </div>
+      <div class="cta-wrap">
+        <button class="cta-main" onclick="window.open('https://hyat.co','_blank')">انضم لقائمة انتظار حياة ←</button>
+        <button class="cta-sec" onclick="shareResult()">شارك نتيجتي</button>
+        <button class="cta-sec" onclick="restartQuiz()">أعيد الاختبار</button>
+        <div class="share-note">hyat.co · دعم صحة المؤسسين</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════
+     ADMIN
+════════════════════════════ -->
+  <div id="page-admin" class="page" style="overflow-y:auto;">
+    <header class="site-header">
+      <div class="logo-wrap" onclick="goTo('page-landing')" style="cursor:pointer;">
+        <img src="hayat logo -06.png" style="height: 36px; object-fit: contain;" alt="Hyat Logo" />
+        <div class="lang-switch" onclick="toggleLang(event)" style="cursor:pointer; display:flex; align-items:center; gap:6px; font-size:12px; font-weight:500; color:rgba(255,255,255,0.7); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.1); margin-inline-start:12px; transition:0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          <span class="lang-ind">EN</span>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center;">
+        <span id="admin-live-badge" style="display:none;font-size:11px;color:var(--sage);letter-spacing:.1em;">●
+          مباشر</span>
+        <button class="admin-btn admin-btn-ghost" style="font-size:12px;padding:9px 20px;"
+          onclick="goTo('page-landing')">← الرئيسية</button>
+      </div>
+    </header>
+
+    <!-- Lock screen -->
+    <div class="admin-lock" id="admin-lock">
+      <div class="lock-icon-big">🔐</div>
+      <div class="lock-title">لوحة تحكم حياة</div>
+      <div class="lock-sub">أدخل الرمز السري للوصول لنتائج المشاركين</div>
+      <input type="password" class="pin-input" id="pin-input" maxlength="4" placeholder="••••"
+        onkeydown="if(event.key==='Enter')checkPin()" />
+      <div class="pin-error" id="pin-error"></div>
+      <button class="pin-submit" onclick="checkPin()">دخول ←</button>
+      <div style="font-size:11px;color:rgba(255,255,255,0.2);margin-top:8px;">الرمز الافتراضي: 1234</div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="admin-dash" style="display:none;">
+      <div class="admin-body">
+        <h1 class="admin-title">نتائج <em>الجلسة</em></h1>
+        <div class="admin-sub" id="admin-sub">آخر تحديث: الآن</div>
+
+        <div class="summary-grid" id="summary-grid"></div>
+
+        <div class="dist-section">
+          <div class="dist-title">توزيع مستويات البطارية</div>
+          <div class="dist-bars" id="dist-bars"></div>
+        </div>
+
+        <div class="section-heading">تفصيل الإجابات لكل سؤال</div>
+        <div class="q-breakdown" id="q-breakdown"></div>
+
+        <div class="section-heading">سجل المشاركين</div>
+        <div class="resp-table-wrap">
+          <table class="resp-table" id="resp-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>الوقت</th>
+                <th>المستوى</th>
+                <th>النسبة</th>
+                <th>النقاط</th>
+              </tr>
+            </thead>
+            <tbody id="resp-tbody"></tbody>
+          </table>
+          <div class="empty-state" id="empty-state">
+            <div class="empty-icon">📊</div>
+            <div>لا يوجد مشاركون بعد.<br>شارك الرابط وانتظر النتائج هنا.</div>
+          </div>
+        </div>
+
+        <div class="admin-actions">
+          <button class="admin-btn admin-btn-coral" onclick="refreshDash()">تحديث البيانات ↻</button>
+          <button class="admin-btn admin-btn-ghost" onclick="exportCSV()">تصدير CSV</button>
+          <button class="admin-btn admin-btn-red" onclick="clearData()">مسح كل البيانات</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    /* ══════════════════════════════
+       DATA
+    ══════════════════════════════ */
+    const ADMIN_PIN = '1234';
+    const STORAGE_KEY = 'hyat_results_v1';
+
+    const Qs = [
+      {
+        text: "كم ساعة نمت البارحة؟",
+        opts: ["أقل من 4 ساعات", "4–5 ساعات", "6 ساعات", "7 ساعات أو أكثر"],
+        scores: [0, 1, 2, 3],
+        colors: ["#D4694A", "#E57F5E", "#8FAF88", "#B1C6A5"]
+      },
+      {
+        text: "متى آخر مرة أخذت يوم إجازة كاملة — بدون شغل، بدون رسائل؟",
+        opts: ["هذا الأسبوع", "هذا الشهر", "أكثر من شهر", "صراحةً لا أتذكر"],
+        scores: [3, 2, 1, 0],
+        colors: ["#B1C6A5", "#8FAF88", "#E57F5E", "#D4694A"]
+      },
+      {
+        text: "كيف تقيّم مستوى ضغطك الآن؟",
+        opts: ["منخفض — أنا بخير", "قابل للإدارة", "مرتفع — أعمل على الأدرينالين", "حرج — وصلت للحد"],
+        scores: [3, 2, 1, 0],
+        colors: ["#B1C6A5", "#B89EC4", "#E57F5E", "#D4694A"]
+      },
+      {
+        text: "جسمك يرسل لك إشارات. هل تسمعها فعلاً؟",
+        opts: ["نعم — أتفحص نفسي يومياً", "أحياناً — لما تعلو الأصوات", "نادراً — ما عندي وقت", "إيش إشارات؟ صرت خدّار"],
+        scores: [3, 2, 1, 0],
+        colors: ["#B1C6A5", "#8FAF88", "#E57F5E", "#D4694A"]
+      },
+      {
+        text: "تحدثت مع أحد عن صحتك ومزاجك في آخر 3 أشهر؟",
+        opts: ["نعم — معالج أو كوتش", "نعم — صديق مقرّب", "لا — بس أبي", "لا — وما راح أتحدث"],
+        scores: [3, 2, 1, 0],
+        colors: ["#8FAF88", "#B1C6A5", "#B89EC4", "#D4694A"]
+      },
+      {
+        text: "لو صحتك كانت مقياس في شركتك، كيف تكون الآن؟",
+        opts: ["نمو مستمر 📈", "ثابتة بدون نمو", "في تراجع — تحتاج تدخل", "ما وصلنا للإيرادات بعد 😬"],
+        scores: [3, 2, 1, 0],
+        colors: ["#B1C6A5", "#8FAF88", "#E57F5E", "#D4694A"]
+      }
+    ];
+
+    const Profiles = [
+      {
+        min: 0, max: 5, pct: 15, color: "#D4694A", label: "شحن حرج",
+        title: "جسمك يطلب المساعدة... <em>منذ فترة.</em>",
+        cards: [
+          { icon: "😴", bg: "rgba(212,105,74,.08)", h: "ديون النوم تتراكم", p: "أقل من 5 ساعات باستمرار يضعف القرارات بنفس أثر الكحول. شركتك تدفع الثمن المعرفي كل يوم." },
+          { icon: "⚡", bg: "rgba(212,105,74,.08)", h: "تعمل على الأدرينالين مش طاقة", p: "الأدرينالين يبدو إنتاجية. لكنه جهاز الطوارئ في جسمك — وله حد لا تتجاوزه." },
+          { icon: "🧠", bg: "rgba(184,158,196,.12)", h: "73% من المؤسسين في نفس المكان", p: "الفرق الوحيد: من يتعامل معها مبكراً يبقي شركته حية لفترة أطول بكثير." }
+        ],
+        oneThingTitle: "أعطِ نفسك محادثة واحدة صادقة — بدون أداء، بدون قناع المستثمر. <em>حياة هي هذا المكان.</em>"
+      },
+      {
+        min: 6, max: 10, pct: 38, color: "#E57F5E", label: "شحن منخفض",
+        title: "تعمل. لكن <em>العمل ليس الازدهار.</em>",
+        cards: [
+          { icon: "🔁", bg: "rgba(212,105,74,.08)", h: "أنت في حلقة الصيانة", p: "كل شيء يسير حتى يُضاف شيء واحد. أسبوع سيء واحد يكفي — وأنت تعرف هذا جيداً." },
+          { icon: "📵", bg: "rgba(143,175,136,.12)", h: "الراحة استراتيجية مش مكافأة", p: "المؤسسون الذين يستمرون عشر سنوات لا يرتاحون أقل — بل يحمون راحتهم بشكل مختلف." },
+          { icon: "🔍", bg: "rgba(184,158,196,.12)", h: "جسمك يعرف ما تحتاجه", p: "أجبت بـ'أحياناً' على سؤال الإشارات. تلك الأحياناً هي نقطة البداية الفعلية." }
+        ],
+        oneThingTitle: "10 دقائق مراجعة شخصية كل أسبوع — خاصة، صادقة، ومتتبّعة. <em>من هناك تبدأ حياة.</em>"
+      },
+      {
+        min: 11, max: 14, pct: 62, color: "#B89EC4", label: "شحن متوسط",
+        title: "أفضل من معظمهم. <em>لنبقيه هكذا.</em>",
+        cards: [
+          { icon: "✅", bg: "rgba(143,175,136,.12)", h: "لديك وعي — وهذا نادر", p: "غالبية المؤسسين في الغرفة أجابوا بشكل أسوأ. الانتباه وحده يُقدّمك على كثيرين." },
+          { icon: "📈", bg: "rgba(143,175,136,.12)", h: "الوقاية أرخص من التعافي", p: "الإرهاق يكلّف 3-6 أشهر من الإنتاجية. أنت لم تصله بعد — لا تنتظر حتى تصله." },
+          { icon: "🤝", bg: "rgba(184,158,196,.12)", h: "المجتمع مورد غير مُستغَل", p: "العزلة هي المضاعف الصامت لضغط المؤسسين. مكان يفهم ضغطك المزمن يحدث فرقاً." }
+        ],
+        oneThingTitle: "ابقَ منتظماً. <em>حياة تساعدك تتابع صحتك قبل أن تصبح أزمة.</em>"
+      },
+      {
+        min: 15, max: 18, pct: 88, color: "#8FAF88", label: "شحن قوي",
+        title: "أنت من <em>النادرين.</em> احمِ هذا.",
+        cards: [
+          { icon: "💚", bg: "rgba(143,175,136,.12)", h: "أخذت الأساسيات بجدية", p: "نوم، حدود، دعم — لديك الركائز. وهذا ليس شائعاً في هذه الغرفة على الإطلاق." },
+          { icon: "⚠️", bg: "rgba(212,105,74,.08)", h: "ربع صعب واحد يمحو كل هذا", p: "التوسع، التمويل، أزمة الفريق — تآكل العادات سريع. النظام قبل الأوقات الصعبة هو الخطوة." },
+          { icon: "🌍", bg: "rgba(184,158,196,.12)", h: "تستطيع أن تكون النموذج لفريقك", p: "ثقافة صحة المؤسس تنتشر للأسفل. إذا حميت صحتك، طبّعتها للجميع حولك." }
+        ],
+        oneThingTitle: "<em>شارك هذا مع شريكك أو فريقك.</em> الثقافة تبدأ منك أنت."
+      }
+    ];
+
+    /* ══════════════════════════════
+       STATE
+    ══════════════════════════════ */
+    let currentQ = 0, selectedOpt = null, answers = [];
+
+    function getProfile(score) {
+      return Profiles.find(p => score >= p.min && score <= p.max) || Profiles[0];
+    }
+
+    /* ══════════════════════════════
+       NAVIGATION
+    ══════════════════════════════ */
+    function goTo(pageId) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+      window.scrollTo(0, 0);
+    }
+
+    /* ══════════════════════════════
+       QUIZ
+    ══════════════════════════════ */
+    function startQuiz() {
+      currentQ = 0; selectedOpt = null; answers = [];
+      goTo('page-quiz');
+      renderQ();
+    }
+
+    function renderPips() {
+      const row = document.getElementById('pips');
+      row.innerHTML = '';
+      Qs.forEach((_, i) => {
+        const d = document.createElement('div');
+        d.className = 'pip' + (i < currentQ ? ' done' : i === currentQ ? ' active' : '');
+        row.appendChild(d);
+      });
+    }
+
+    function renderQ() {
+      const q = Qs[currentQ];
+      document.getElementById('q-num').textContent = `سؤال ${currentQ + 1} من ${Qs.length}`;
+      document.getElementById('q-header-label').textContent = `سؤال ${currentQ + 1} من ${Qs.length}`;
+      document.getElementById('q-text').textContent = q.text;
+      selectedOpt = null;
+      document.getElementById('submit-btn').classList.remove('on');
+      document.getElementById('submit-btn').textContent = currentQ < Qs.length - 1 ? 'التالي ←' : 'أظهر نتيجتي ←';
+
+      const opts = document.getElementById('opts');
+      opts.innerHTML = '';
+      q.opts.forEach((opt, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'opt';
+        btn.textContent = opt;
+        btn.onclick = () => {
+          document.querySelectorAll('.opt').forEach(b => b.classList.remove('sel'));
+          btn.classList.add('sel');
+          selectedOpt = i;
+          document.getElementById('submit-btn').classList.add('on');
+        };
+        opts.appendChild(btn);
+      });
+
+      const body = document.getElementById('quiz-body');
+      body.classList.remove('fade-up');
+      void body.offsetWidth;
+      body.classList.add('fade-up');
+      renderPips();
+    }
+
+    function submitAnswer() {
+      if (selectedOpt === null) return;
+      answers.push(selectedOpt);
+      if (currentQ < Qs.length - 1) {
+        currentQ++;
+        renderQ();
+      } else {
+        showResults();
+      }
+    }
+
+    /* ══════════════════════════════
+       RESULTS
+    ══════════════════════════════ */
+    function showResults() {
+      let score = 0;
+      answers.forEach((ans, qi) => { score += Qs[qi].scores[ans]; });
+      const profile = getProfile(score);
+
+      // Save to storage
+      saveResult(score, profile);
+
+      goTo('page-results');
+
+      // Battery fill animation
+      document.getElementById('bfill').style.background = profile.color;
+      document.getElementById('blabel').textContent = profile.label;
+      document.getElementById('rtitle').innerHTML = profile.title;
+      document.getElementById('ot-text').innerHTML = profile.oneThingTitle;
+
+      let cur = 0;
+      const target = profile.pct;
+      const bpct = document.getElementById('bpct');
+      const bfill = document.getElementById('bfill');
+      const step = setInterval(() => {
+        cur = Math.min(cur + 2, target);
+        bpct.innerHTML = cur + '<span>%</span>';
+        bfill.style.width = cur + '%';
+        if (cur >= target) clearInterval(step);
+      }, 18);
+
+      // Cards
+      const rcards = document.getElementById('rcards');
+      rcards.innerHTML = '';
+      profile.cards.forEach((c, i) => {
+        const div = document.createElement('div');
+        div.className = 'r-card';
+        div.style.opacity = '0';
+        div.innerHTML = `<div class="r-card-icon" style="background:${c.bg}">${c.icon}</div><div><h4>${c.h}</h4><p>${c.p}</p></div>`;
+        rcards.appendChild(div);
+        setTimeout(() => {
+          div.style.transition = 'opacity .4s ease, transform .4s ease';
+          div.style.transform = 'translateY(10px)';
+          div.style.opacity = '0';
+          void div.offsetWidth;
+          div.style.opacity = '1';
+          div.style.transform = 'translateY(0)';
+        }, i * 120 + 400);
+      });
+    }
+
+    function restartQuiz() { startQuiz(); }
+
+    function shareResult() {
+      const text = 'اكتشفت مستوى بطارية جسمي في ورشة حياة — جرّبه أنت أيضاً!';
+      if (navigator.share) {
+        navigator.share({ title: "بطارية جسمي — حياة", text, url: window.location.href });
+      } else {
+        navigator.clipboard.writeText(window.location.href).then(() => showToast('تم نسخ الرابط ✓'));
+      }
+    }
+
+    /* ══════════════════════════════
+       LOCAL STORAGE
+    ══════════════════════════════ */
+    function loadResults() {
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
+      catch (e) { return []; }
+    }
+    function saveResult(score, profile) {
+      const results = loadResults();
+      results.push({
+        id: Date.now(),
+        time: new Date().toLocaleTimeString('ar-SA', { hour: '2-digit', minute: '2-digit' }),
+        score,
+        pct: profile.pct,
+        level: profile.label,
+        color: profile.color,
+        answers: [...answers]
+      });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(results));
+    }
+
+    /* ══════════════════════════════
+       ADMIN
+    ══════════════════════════════ */
+    function checkPin() {
+      const val = document.getElementById('pin-input').value;
+      if (val === ADMIN_PIN) {
+        document.getElementById('admin-lock').style.display = 'none';
+        document.getElementById('admin-dash').style.display = 'block';
+        document.getElementById('admin-live-badge').style.display = 'inline';
+        refreshDash();
+        // Auto-refresh every 10s
+        window.adminInterval = setInterval(refreshDash, 10000);
+      } else {
+        document.getElementById('pin-error').textContent = 'رمز خاطئ، حاول مرة أخرى';
+        document.getElementById('pin-input').value = '';
+        document.getElementById('pin-input').focus();
+      }
+    }
+
+    function refreshDash() {
+      const results = loadResults();
+      document.getElementById('admin-sub').textContent = `${results.length} مشارك · آخر تحديث: ${new Date().toLocaleTimeString('ar-SA')}`;
+
+      // Summary
+      const avgScore = results.length ? Math.round(results.reduce((a, b) => a + b.score, 0) / results.length * 10) / 10 : 0;
+      const avgPct = results.length ? Math.round(results.reduce((a, b) => a + b.pct, 0) / results.length) : 0;
+      const levelCounts = {};
+      Profiles.forEach(p => { levelCounts[p.label] = 0; });
+      results.forEach(r => { if (levelCounts[r.level] !== undefined) levelCounts[r.level]++; });
+      const topLevel = results.length ? Object.entries(levelCounts).sort((a, b) => b[1] - a[1])[0][0] : '—';
+
+      document.getElementById('summary-grid').innerHTML = `
+    <div class="s-card"><div class="s-card-n">${results.length}</div><div class="s-card-l">إجمالي المشاركين</div></div>
+    <div class="s-card"><div class="s-card-n">${avgPct}%</div><div class="s-card-l">متوسط البطارية</div></div>
+    <div class="s-card"><div class="s-card-n">${avgScore}</div><div class="s-card-l">متوسط النقاط / 18</div></div>
+    <div class="s-card"><div class="s-card-n" style="font-size:18px;padding-top:6px;">${topLevel || '—'}</div><div class="s-card-l">الأكثر شيوعاً</div></div>
+  `;
+
+      // Distribution bars
+      const total = results.length || 1;
+      const distHtml = Profiles.map(p => {
+        const count = levelCounts[p.label] || 0;
+        const pct = Math.round(count / total * 100);
+        return `<div class="dist-row">
+      <div class="dist-lbl">${p.label}</div>
+      <div class="dist-track"><div class="dist-bar" style="background:${p.color};width:${pct}%"><span class="dist-pct">${pct > 8 ? pct + '%' : ''}</span></div></div>
+      <div class="dist-n">${count}</div>
+    </div>`;
+      }).join('');
+      document.getElementById('dist-bars').innerHTML = distHtml;
+
+      // Q breakdown
+      const qbHtml = Qs.map((q, qi) => {
+        const optCounts = q.opts.map(() => 0);
+        results.forEach(r => { if (r.answers && r.answers[qi] !== undefined) optCounts[r.answers[qi]]++; });
+        const qTotal = optCounts.reduce((a, b) => a + b, 0) || 1;
+        const rows = q.opts.map((opt, oi) => {
+          const p = Math.round(optCounts[oi] / qTotal * 100);
+          return `<div class="qb-row">
+        <div class="qb-lbl">${opt}</div>
+        <div class="qb-track"><div class="qb-bar" style="background:${q.colors[oi]};width:${p}%"><span class="qb-pct">${p > 6 ? p + '%' : ''}</span></div></div>
+        <div class="qb-n">${optCounts[oi]}</div>
+      </div>`;
+        }).join('');
+        return `<div class="qb-card">
+      <div class="qb-q">س${qi + 1}: ${q.text}</div>
+      <div class="qb-opts">${rows}</div>
+    </div>`;
+      }).join('');
+      document.getElementById('q-breakdown').innerHTML = qbHtml;
+
+      // Table
+      const tbody = document.getElementById('resp-tbody');
+      const empty = document.getElementById('empty-state');
+      if (results.length === 0) {
+        tbody.innerHTML = ''; empty.style.display = 'block';
+        document.getElementById('resp-table').style.display = 'none';
+      } else {
+        empty.style.display = 'none';
+        document.getElementById('resp-table').style.display = 'table';
+        tbody.innerHTML = results.slice().reverse().map((r, i) => `
+      <tr>
+        <td style="color:rgba(255,255,255,0.3);">${results.length - i}</td>
+        <td>${r.time}</td>
+        <td><span class="level-badge" style="background:${r.color}22;color:${r.color};border:1px solid ${r.color}44;">${r.level}</span></td>
+        <td style="font-weight:500;color:${r.color};">${r.pct}%</td>
+        <td style="color:rgba(255,255,255,0.5);">${r.score}/18</td>
+      </tr>`).join('');
+      }
+    }
+
+    function exportCSV() {
+      const results = loadResults();
+      if (!results.length) { showToast('لا توجد بيانات للتصدير'); return; }
+      const header = '#,الوقت,المستوى,النسبة,النقاط\n';
+      const rows = results.map((r, i) => `${i + 1},${r.time},${r.level},${r.pct}%,${r.score}/18`).join('\n');
+      const blob = new Blob(['\uFEFF' + header + rows], { type: 'text/csv;charset=utf-8;' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `hyat-results-${new Date().toISOString().slice(0, 10)}.csv`;
+      a.click();
+      showToast('تم التصدير ✓');
+    }
+
+    function clearData() {
+      if (confirm('هل أنت متأكد؟ سيتم مسح جميع بيانات المشاركين.')) {
+        localStorage.removeItem(STORAGE_KEY);
+        refreshDash();
+        showToast('تم مسح البيانات');
+      }
+    }
+
+    /* ══════════════════════════════
+       TOAST
+    ══════════════════════════════ */
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2800);
+    }
+
+    /* ══════════════════════════════
+       INIT
+    ══════════════════════════════ */
+    renderQ();
+    renderPips();
+  </script>
+
+<script>
+  let currentLang = 'ar';
+  
+  // English questions & profiles overrides
+  const enQ_texts = [
+    "How many hours did you sleep last night?",
+    "When was the last time you took a full day off — no work, no messages?",
+    "How do you rate your stress level right now?",
+    "Your body sends you signals. Do you actually listen?",
+    "Have you talked to anyone about your health and mood in the last 3 months?",
+    "If your health was a metric in your company, how would it be right now?"
+  ];
+  const enQ_opts = [
+    ["Less than 4 hours", "4–5 hours", "6 hours", "7 or more"],
+    ["This week", "This month", "More than a month", "I honestly can't remember"],
+    ["Low — I'm fine", "Manageable", "High — running on adrenaline", "Critical — reached the limit"],
+    ["Yes — I check in daily", "Sometimes — when it gets loud", "Rarely — no time", "What signals? I'm numb"],
+    ["Yes — therapist or coach", "Yes — close friend", "No — only to family", "No — and I won't"],
+    ["Steady growth 📈", "Stagnant, no growth", "Declining — needs intervention", "Pre-revenue 😬"]
+  ];
+  const enP_labels = ["Critical Charge", "Low Charge", "Medium Charge", "Strong Charge"];
+  const enP_titles = [
+    "Your body is asking for help... <em>for a while.</em>",
+    "You work. But <em>working isn't thriving.</em>",
+    "Better than most. <em>Let's keep it that way.</em>",
+    "You are a <em>rare breed.</em> Protect this."
+  ];
+  const enP_oneThing = [
+    "Give yourself one honest conversation — no performance, no investor mask. <em>HYAT is that place.</em>",
+    "10 mins personal review every week — private, honest, tracked. <em>From there HYAT starts.</em>",
+    "Stay consistent. <em>HYAT helps you track your health before it becomes a crisis.</em>",
+    "<em>Share this with your partner or team.</em> Culture starts with you."
+  ];
+  const enP_cards = [
+    [
+      {h: "Sleep debt is accumulating", p: "Consistently under 5hrs impairs decisions like alcohol. Your company pays the cognitive cost daily."},
+      {h: "Running on adrenaline, not energy", p: "Adrenaline looks like productivity. But it's an emergency system — with a limit."},
+      {h: "73% of founders are here", p: "The only difference: those who handle it early keep their company alive much longer."}
+    ],
+    [
+      {h: "You are in a maintenance loop", p: "Everything works until one thing is added. One bad week is enough — and you know it."},
+      {h: "Rest is strategy, not reward", p: "Founders who last 10 years don't rest less — they protect their rest differently."},
+      {h: "Your body knows what you need", p: "You answered 'Sometimes' to signals. That 'sometimes' is the actual starting point."}
+    ],
+    [
+      {h: "You have awareness — rare", p: "Most founders in the room answered worse. Attention alone puts you ahead."},
+      {h: "Prevention is cheaper than recovery", p: "Burnout costs 3-6 months. You're not there yet — don't wait until you are."},
+      {h: "Community is untapped", p: "Isolation is the silent multiplier. A place that understands chronic stress changes everything."}
+    ],
+    [
+      {h: "You take basics seriously", p: "Sleep, boundaries, support — you have pillars. This is not common here at all."},
+      {h: "One hard quarter erases this", p: "Scaling, funding, team crisis — habits erode fast. Systems before hard times is key."},
+      {h: "You can model this for your team", p: "Founder health culture spreads down. If you protect yours, you normalize it for everyone."}
+    ]
+  ];
+
+  // Static translations dictionary
+  const dict = {
+    "لوحة التحكم ↗": "Dashboard ↗",
+    "← الرئيسية": "← Home",
+    "اليوم العالمي للصحة · 7 أبريل": "World Health Day · Apr 7",
+    "ما هي\nبطارية جسمك؟": "What is your\nbody battery?",
+    "6 أسئلة صريحة، نتيجة فورية، بدون اسم ولا حساب. اكتشف أين تقف صحتك كمؤسس.": "6 honest questions, instant result, completely anonymous. Find out where your health stands as a founder.",
+    "من المؤسسين يعانون\nالإرهاق بصمت": "of founders suffer\nsilent burnout",
+    "فقط يطلبون\nأي دعم": "only ask for\nany support",
+    "من فشل الشركات يبدأ\nبصحة المؤسس": "of startup failures begin\nwith founder's health",
+    "من المؤسسين يعانون": "of founders suffer",
+    "الإرهاق بصمت": "silent burnout",
+    "فقط يطلبون": "only ask for",
+    "أي دعم": "support",
+    "من فشل الشركات يبدأ": "of startup failures begin",
+    "بصحة المؤسس": "with founder health",
+    "لا يوجد مشاركون بعد.": "No participants yet.",
+    "شارك الرابط وانتظر النتائج هنا.": "Share the link and wait for results.",
+    "ابدأ الاختبار ←": "Start Quiz →",
+    "مجهول الهوية تماماً — اسمك لا يُجمع أبداً": "Completely anonymous — your name is never collected",
+    "التالي ←": "Next →",
+    "أظهر نتيجتي ←": "Show Result →",
+    "مجهول الهوية — لا يتم جمع اسمك": "Anonymous — your name is not collected",
+    "نتيجتك": "Your Result",
+    "جاري الحساب…": "Calculating...",
+    "الشيء الواحد الذي تفعله الآن": "The ONE thing to do now",
+    "انضم لقائمة انتظار حياة ←": "Join HYAT waitlist →",
+    "شارك نتيجتي": "Share my result",
+    "أعيد الاختبار": "Retake Quiz",
+    "لوحة تحكم حياة": "HYAT Dashboard",
+    "أدخل الرمز السري للوصول لنتائج المشاركين": "Enter PIN to access results",
+    "دخول ←": "Enter →",
+    "الرمز الافتراضي: 1234": "Default PIN: 1234",
+    "نتائج الجلسة": "Session Results",
+    "آخر تحديث: الآن": "Last update: Now",
+    "توزيع مستويات البطارية": "Battery Level Distribution",
+    "تفصيل الإجابات لكل سؤال": "Answers Breakdown",
+    "سجل المشاركين": "Participants Log",
+    "إجمالي المشاركين": "Total Participants",
+    "متوسط البطارية": "Avg Battery",
+    "متوسط النقاط / 18": "Avg Score / 18",
+    "الأكثر شيوعاً": "Most Common",
+    "تحديث البيانات ↻": "Refresh Data ↻",
+    "تصدير CSV": "Export CSV",
+    "مسح كل البيانات": "Clear All Data",
+    "لا يوجد مشاركون بعد.\nشارك الرابط وانتظر النتائج هنا.": "No participants yet.\nShare the link and wait for results."
+  };
+
+  function trDOM(node) {
+    if (node.nodeType === 3) {
+      let txt = node.nodeValue.trim();
+      if (!txt) return;
+      if (!node.originalTxt) node.originalTxt = txt;
+      
+      let baseTxt = node.originalTxt;
+      
+      // Dynamic replacements
+      if (baseTxt.startsWith("سؤال ") && baseTxt.includes(" من ")) {
+        if(currentLang === 'en') {
+          node.nodeValue = baseTxt.replace("سؤال ", "Question ").replace(" من ", " of ");
+        } else {
+          node.nodeValue = baseTxt;
+        }
+        return;
+      }
+
+      if (currentLang === 'en' && dict[baseTxt]) {
+        node.nodeValue = dict[baseTxt];
+      } else if (currentLang === 'ar') {
+        node.nodeValue = baseTxt;
+      }
+    } else {
+      if(node.tagName === 'SCRIPT' || node.tagName === 'STYLE') return;
+      for (let i = 0; i < node.childNodes.length; i++) {
+        trDOM(node.childNodes[i]);
+      }
+    }
+  }
+
+  // Backup original Arrays
+  const arQ_texts = Qs.map(q => q.text);
+  const arQ_opts = Qs.map(q => [...q.opts]);
+  const arP_labels = Profiles.map(p => p.label);
+  const arP_titles = Profiles.map(p => p.title);
+  const arP_oneThing = Profiles.map(p => p.oneThingTitle);
+  const arP_cards = Profiles.map(p => p.cards.map(c => ({...c})));
+
+  function toggleLang(e) {
+    if(e) { e.preventDefault(); e.stopPropagation(); }
+    currentLang = currentLang === 'ar' ? 'en' : 'ar';
+    document.documentElement.lang = currentLang;
+    document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+    document.querySelectorAll('.lang-ind').forEach(el => el.textContent = currentLang === 'ar' ? 'EN' : 'عربي');
+    
+    // Update data objects
+    if(currentLang === 'en') {
+      Qs.forEach((q, i) => { q.text = enQ_texts[i]; q.opts = [...enQ_opts[i]]; });
+      Profiles.forEach((p, i) => { 
+        p.label = enP_labels[i]; p.title = enP_titles[i]; p.oneThingTitle = enP_oneThing[i]; 
+        p.cards.forEach((c, ci) => { c.h = enP_cards[i][ci].h; c.p = enP_cards[i][ci].p; });
+      });
+      // specific fixes for tags
+      document.querySelector('.landing-tag').innerHTML = '<span class="tag-dot"></span> World Health Day · Apr 7';
+      document.querySelector('.landing-h1').innerHTML = 'What is your<br><em>body battery?</em>';
+      document.querySelector('.admin-title').innerHTML = 'Session <em>Results</em>';
+    } else {
+      Qs.forEach((q, i) => { q.text = arQ_texts[i]; q.opts = [...arQ_opts[i]]; });
+      Profiles.forEach((p, i) => { 
+        p.label = arP_labels[i]; p.title = arP_titles[i]; p.oneThingTitle = arP_oneThing[i]; 
+        p.cards.forEach((c, ci) => { c.h = arP_cards[i][ci].h; c.p = arP_cards[i][ci].p; });
+      });
+      // specific fixes for tags
+      document.querySelector('.landing-tag').innerHTML = '<span class="tag-dot"></span> اليوم العالمي للصحة · 7 أبريل';
+      document.querySelector('.landing-h1').innerHTML = 'ما هي<br><em>بطارية جسمك؟</em>';
+      document.querySelector('.admin-title').innerHTML = 'نتائج <em>الجلسة</em>';
+    }
+
+    trDOM(document.body);
+    
+    // Refresh current view
+    if(document.getElementById('page-quiz').classList.contains('active')) renderQ();
+    if(document.getElementById('page-admin').classList.contains('active')) refreshDash();
+    if(document.getElementById('page-results').classList.contains('active')) showResults(); // will force recalculate and redraw with correct language
+  }
+</script>
+</body>
+
+
+</html>
