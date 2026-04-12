@@ -1126,8 +1126,10 @@
           <span class="lang-ind">EN</span>
         </div>
       </div>
-      <button class="admin-btn admin-btn-ghost" style="font-size:12px;padding:9px 20px;"
-        onclick="goTo('page-admin')">لوحة التحكم ↗</button>
+      <div style="display:flex;gap:10px;align-items:center;">
+        <button class="admin-btn admin-btn-ghost" style="font-size:14px;padding:8px 12px;" onclick="showPublicStats()" title="إحصائيات المشاركين">📊</button>
+        <button class="admin-btn admin-btn-ghost" style="font-size:12px;padding:9px 20px;" onclick="goTo('page-admin')">لوحة التحكم ↗</button>
+      </div>
     </header>
 
     <div class="landing-body">
@@ -1220,7 +1222,6 @@
       <div class="cta-wrap">
         <button class="cta-main" onclick="window.open('https://form.typeform.com/to/e6yFok0a')">انضم لقائمة انتظار حياة ←</button>
         <button class="cta-sec" onclick="shareResult()">شارك نتيجتي</button>
-        <button class="cta-sec" onclick="showPublicStats()">إحصائيات المشاركين</button>
         <button class="cta-sec" onclick="restartQuiz()">أعيد الاختبار</button>
         <div class="share-note">hyat.co · دعم صحة المؤسسين</div>
       </div>
@@ -1555,32 +1556,49 @@
       const results = loadResults();
       const total = results.length;
       
-      let html = `<div style="text-align:center; padding: 20px 0; color:rgba(255,255,255,0.6);"><span>إجمالي المشاركين</span>: <strong>${total}</strong></div>`;
+      const traitsEn = [
+        { good: "Strong drive under pressure", bad: "Severe burnout and cognitive decline risk" },
+        { good: "Functional and surviving", bad: "One bad week away from crashing" },
+        { good: "Has awareness, better than most", bad: "Still missing deep restorative habits" },
+        { good: "Highly resilient and balanced", bad: "Habits may easily slip during crisis" }
+      ];
+      const traitsAr = [
+        { good: "قدرة تحمل وضغط عالية", bad: "خطر احتراق وانهيار مفاجئ" },
+        { good: "متماسك وما زال يعمل", bad: "معرض للانهيار مع أي ضغط إضافي" },
+        { good: "يتصرف بوعي أفضل من الأغلبية", bad: "يحتاج لتعزيز جودة الراحة والاسترخاء" },
+        { good: "مرونة وانتاجية صحية طويلة الأمد", bad: "تتطلب مجهوداً مستمراً للحفاظ عليها" }
+      ];
       
-      Profiles.forEach(p => {
+      let html = `<div style="text-align:center; padding: 20px 0; color:rgba(255,255,255,0.6);"><span>إجمالي المشاركين</span>: <strong style="color:white;font-size:18px;">${total}</strong></div>`;
+      
+      html += `<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:20px; padding-bottom:40px;">`;
+      
+      Profiles.forEach((p, i) => {
         let count = results.filter(r => r.level === p.label).length;
+        let trait = currentLang === 'en' ? traitsEn[i] : traitsAr[i];
         
-        let cardsHtml = p.cards.map(c => `
-          <div class="r-card" style="margin-bottom:10px;">
-            <div class="r-card-icon" style="background:${c.bg}">${c.icon}</div>
-            <div><h4>${c.h}</h4><p>${c.p}</p></div>
-          </div>
-        `).join('');
-
         html += `
-          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:20px; margin-bottom:20px;">
-            <div style="display:flex; align-items:center; gap:15px; margin-bottom:15px;">
+          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:20px; display:flex; flex-direction:column;">
+            <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
               <div style="width:16px; height:16px; border-radius:50%; background:${p.color};"></div>
-              <h3 style="margin:0; flex-grow:1; font-weight:500;">${p.label}</h3>
-              <div style="font-size:20px; font-weight:bold; color:var(--coral);">${count} <span style="font-size:12px;opacity:0.5;color:white;">مشارك</span></div>
+              <h3 style="margin:0; flex-grow:1; font-weight:500; font-size:18px;">${p.label}</h3>
+              <div style="font-size:24px; font-weight:bold; color:var(--coral);">${count} <span style="font-size:12px;opacity:0.5;color:white;font-weight:normal;">مشارك</span></div>
             </div>
-            <div style="background:rgba(255,255,255,0.05); padding:14px; border-radius:12px; margin-bottom:15px; font-size:14px;">
-              <strong style="color:var(--sage-l);">نصيحة:</strong> ${p.oneThingTitle}
+            
+            <div style="margin-top:auto; display:flex; flex-direction:column; gap:12px;">
+              <div style="background:rgba(143,175,136,0.1); border-inline-start: 3px solid var(--sage); padding:12px 14px; border-radius:8px;">
+                <div style="font-size:12px; color:var(--sage); margin-bottom:4px; font-weight:bold;"><span>نقطة القوة</span></div>
+                <div style="font-size:14px; color:rgba(255,255,255,0.9); line-height:1.4;">${trait.good}</div>
+              </div>
+              <div style="background:rgba(212,105,74,0.1); border-inline-start: 3px solid var(--coral); padding:12px 14px; border-radius:8px;">
+                <div style="font-size:12px; color:var(--coral); margin-bottom:4px; font-weight:bold;"><span>نقطة الضعف</span></div>
+                <div style="font-size:14px; color:rgba(255,255,255,0.9); line-height:1.4;">${trait.bad}</div>
+              </div>
             </div>
-            ${cardsHtml}
           </div>
         `;
       });
+      html += `</div>`;
       document.getElementById('public-stats-container').innerHTML = html;
       
       trDOM(document.getElementById('page-public-stats'));
@@ -1844,6 +1862,8 @@
     "← الرجوع للنتيجة": "← Back to Result",
     "مشارك": "participant(s)",
     "نصيحة:": "Tip:",
+    "نقطة القوة": "Strength",
+    "نقطة الضعف": "Weakness",
     "إجمالي المشاركين": "Total Participants",
     "سجل المشاركين": "Participants Log",
     "متوسط البطارية": "Avg Battery",
