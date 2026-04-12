@@ -1571,28 +1571,30 @@
       
       let html = `<div style="text-align:center; padding: 20px 0; color:rgba(255,255,255,0.6);"><span>إجمالي المشاركين</span>: <strong style="color:white;font-size:18px;">${total}</strong></div>`;
       
-      html += `<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:20px; padding-bottom:40px;">`;
+      html += `<div style="display:flex; flex-direction:column; gap:16px; padding-bottom:40px;">`;
       
       Profiles.forEach((p, i) => {
         let count = results.filter(r => r.level === p.label).length;
         let trait = currentLang === 'en' ? traitsEn[i] : traitsAr[i];
         
         html += `
-          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:20px; display:flex; flex-direction:column;">
-            <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
+          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:20px; display:flex; flex-wrap:wrap; align-items:center; gap:20px;">
+            <div style="flex: 1 1 200px; display:flex; align-items:center; gap:15px;">
               <div style="width:16px; height:16px; border-radius:50%; background:${p.color};"></div>
-              <h3 style="margin:0; flex-grow:1; font-weight:500; font-size:18px;">${p.label}</h3>
-              <div style="font-size:24px; font-weight:bold; color:var(--coral);">${count} <span style="font-size:12px;opacity:0.5;color:white;font-weight:normal;">مشارك</span></div>
+              <div>
+                <h3 style="margin:0 0 4px; font-weight:500; font-size:18px;">${p.label}</h3>
+                <div style="font-size:24px; font-weight:bold; color:var(--coral); line-height:1;">${count} <span style="font-size:12px;opacity:0.5;color:white;font-weight:normal;">مشارك</span></div>
+              </div>
             </div>
             
-            <div style="margin-top:auto; display:flex; flex-direction:column; gap:12px;">
-              <div style="background:rgba(143,175,136,0.1); border-inline-start: 3px solid var(--sage); padding:12px 14px; border-radius:8px;">
+            <div style="flex: 2 1 400px; display:flex; gap:12px; flex-wrap:wrap;">
+              <div style="flex:1; min-width:180px; background:rgba(143,175,136,0.1); border-inline-start: 3px solid var(--sage); padding:12px 14px; border-radius:8px;">
                 <div style="font-size:12px; color:var(--sage); margin-bottom:4px; font-weight:bold;"><span>نقطة القوة</span></div>
-                <div style="font-size:14px; color:rgba(255,255,255,0.9); line-height:1.4;">${trait.good}</div>
+                <div style="font-size:13px; color:rgba(255,255,255,0.9); line-height:1.4;">${trait.good}</div>
               </div>
-              <div style="background:rgba(212,105,74,0.1); border-inline-start: 3px solid var(--coral); padding:12px 14px; border-radius:8px;">
+              <div style="flex:1; min-width:180px; background:rgba(212,105,74,0.1); border-inline-start: 3px solid var(--coral); padding:12px 14px; border-radius:8px;">
                 <div style="font-size:12px; color:var(--coral); margin-bottom:4px; font-weight:bold;"><span>نقطة الضعف</span></div>
-                <div style="font-size:14px; color:rgba(255,255,255,0.9); line-height:1.4;">${trait.bad}</div>
+                <div style="font-size:13px; color:rgba(255,255,255,0.9); line-height:1.4;">${trait.bad}</div>
               </div>
             </div>
           </div>
