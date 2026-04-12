@@ -333,10 +333,23 @@
     }
 
     [dir="rtl"] .opt.sel::after {
-      content: '✓'; position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--coral); font-size: 16px;
+      content: '✓';
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--coral);
+      font-size: 16px;
     }
+
     [dir="ltr"] .opt.sel::after {
-      content: '✓'; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: var(--coral); font-size: 16px;
+      content: '✓';
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--coral);
+      font-size: 16px;
     }
 
     .quiz-footer {
@@ -1121,14 +1134,23 @@
     <header class="site-header">
       <div class="logo-wrap" onclick="goTo('page-landing')">
         <img src="hayat logo -06.png" style="height: 36px; object-fit: contain;" alt="Hyat Logo" />
-        <div class="lang-switch" onclick="toggleLang(event)" style="cursor:pointer; display:flex; align-items:center; gap:6px; font-size:12px; font-weight:500; color:rgba(255,255,255,0.7); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.1); margin-inline-start:12px; transition:0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        <div class="lang-switch" onclick="toggleLang(event)"
+          style="cursor:pointer; display:flex; align-items:center; gap:6px; font-size:12px; font-weight:500; color:rgba(255,255,255,0.7); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.1); margin-inline-start:12px; transition:0.2s;"
+          onmouseover="this.style.background='rgba(255,255,255,0.1)'"
+          onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
           <span class="lang-ind">EN</span>
         </div>
       </div>
       <div style="display:flex;gap:10px;align-items:center;">
-        <button class="admin-btn admin-btn-ghost" style="font-size:14px;padding:8px 12px;" onclick="showPublicStats()" title="إحصائيات المشاركين">📊</button>
-        <button class="admin-btn admin-btn-ghost" style="font-size:12px;padding:9px 20px;" onclick="goTo('page-admin')">لوحة التحكم ↗</button>
+        <button class="admin-btn admin-btn-ghost" style="font-size:14px;padding:8px 12px;" onclick="showPublicStats()"
+          title="إحصائيات المشاركين">📊</button>
+        <button class="admin-btn admin-btn-ghost" style="font-size:12px;padding:9px 20px;"
+          onclick="goTo('page-admin')">لوحة التحكم ↗</button>
       </div>
     </header>
 
@@ -1164,8 +1186,15 @@
     <header class="site-header">
       <div class="logo-wrap" onclick="goTo('page-landing')">
         <img src="hayat logo -06.png" style="height: 36px; object-fit: contain;" alt="Hyat Logo" />
-        <div class="lang-switch" onclick="toggleLang(event)" style="cursor:pointer; display:flex; align-items:center; gap:6px; font-size:12px; font-weight:500; color:rgba(255,255,255,0.7); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.1); margin-inline-start:12px; transition:0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        <div class="lang-switch" onclick="toggleLang(event)"
+          style="cursor:pointer; display:flex; align-items:center; gap:6px; font-size:12px; font-weight:500; color:rgba(255,255,255,0.7); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.1); margin-inline-start:12px; transition:0.2s;"
+          onmouseover="this.style.background='rgba(255,255,255,0.1)'"
+          onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
           <span class="lang-ind">EN</span>
         </div>
       </div>
@@ -1194,8 +1223,15 @@
     <header class="site-header">
       <div class="logo-wrap">
         <img src="hayat logo -06.png" style="height: 36px; object-fit: contain;" alt="Hyat Logo" />
-        <div class="lang-switch" onclick="toggleLang(event)" style="cursor:pointer; display:flex; align-items:center; gap:6px; font-size:12px; font-weight:500; color:rgba(255,255,255,0.7); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.1); margin-inline-start:12px; transition:0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        <div class="lang-switch" onclick="toggleLang(event)"
+          style="cursor:pointer; display:flex; align-items:center; gap:6px; font-size:12px; font-weight:500; color:rgba(255,255,255,0.7); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.1); margin-inline-start:12px; transition:0.2s;"
+          onmouseover="this.style.background='rgba(255,255,255,0.1)'"
+          onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
           <span class="lang-ind">EN</span>
         </div>
       </div>
@@ -1220,10 +1256,11 @@
         <div class="ot-text" id="ot-text"></div>
       </div>
       <div class="cta-wrap">
-        <button class="cta-main" onclick="window.open('https://form.typeform.com/to/e6yFok0a')">انضم لقائمة انتظار حياة ←</button>
+        <button class="cta-main" onclick="window.open('https://form.typeform.com/to/e6yFok0a')">انضم لقائمة انتظار حياة
+          ←</button>
         <button class="cta-sec" onclick="shareResult()">شارك نتيجتي</button>
         <button class="cta-sec" onclick="showPublicStats()">تحليلات المشاركين</button>
-        <button class="cta-sec" onclick="restartQuiz()">أعيد الاختبار</button>
+        <button class="cta-sec" onclick="restartQuiz()">أعِد الاختبار</button>
         <div class="share-note">hyat.co · دعم صحة المؤسسين</div>
       </div>
     </div>
@@ -1236,8 +1273,15 @@
     <header class="site-header">
       <div class="logo-wrap" onclick="goTo('page-landing')" style="cursor:pointer;">
         <img src="hayat logo -06.png" style="height: 36px; object-fit: contain;" alt="Hyat Logo" />
-        <div class="lang-switch" onclick="toggleLang(event)" style="cursor:pointer; display:flex; align-items:center; gap:6px; font-size:12px; font-weight:500; color:rgba(255,255,255,0.7); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.1); margin-inline-start:12px; transition:0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        <div class="lang-switch" onclick="toggleLang(event)"
+          style="cursor:pointer; display:flex; align-items:center; gap:6px; font-size:12px; font-weight:500; color:rgba(255,255,255,0.7); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.1); margin-inline-start:12px; transition:0.2s;"
+          onmouseover="this.style.background='rgba(255,255,255,0.1)'"
+          onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
           <span class="lang-ind">EN</span>
         </div>
       </div>
@@ -1313,8 +1357,15 @@
     <header class="site-header">
       <div class="logo-wrap" onclick="goTo('page-landing')" style="cursor:pointer;">
         <img src="hayat logo -06.png" style="height: 36px; object-fit: contain;" alt="Hyat Logo" />
-        <div class="lang-switch" onclick="toggleLang(event)" style="cursor:pointer; display:flex; align-items:center; gap:6px; font-size:12px; font-weight:500; color:rgba(255,255,255,0.7); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.1); margin-inline-start:12px; transition:0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        <div class="lang-switch" onclick="toggleLang(event)"
+          style="cursor:pointer; display:flex; align-items:center; gap:6px; font-size:12px; font-weight:500; color:rgba(255,255,255,0.7); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.1); margin-inline-start:12px; transition:0.2s;"
+          onmouseover="this.style.background='rgba(255,255,255,0.1)'"
+          onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
           <span class="lang-ind">EN</span>
         </div>
       </div>
@@ -1341,146 +1392,146 @@
     const STORAGE_KEY = 'hyat_results_v1';
 
     const Qs = [
-  {
-    text: "كم ساعة نمت ليلة البارحة؟",
-    opts: ["أقل من 4 ساعات", "4–5 ساعات", "6 ساعات", "7 ساعات أو أكثر"],
-    scores: [0, 1, 2, 3],
-    colors: ["#D4694A", "#E57F5E", "#8FAF88", "#B1C6A5"]
-  },
-  {
-    text: "متى كانت آخر مرة أخذت فيها إجازة كاملة (بدون عمل أو رسائل)؟",
-    opts: ["هذا الأسبوع", "هذا الشهر", "أكثر من شهر", "صراحةً لا أتذكر"],
-    scores: [3, 2, 1, 0],
-    colors: ["#B1C6A5", "#8FAF88", "#E57F5E", "#D4694A"]
-  },
-  {
-    text: "كيف تقيِّم مستوى ضغطك الحالي؟",
-    opts: ["منخفض — أنا بخير", "مقبول — أستطيع إدارته", "مرتفع — أعمل بالأدرينالين فقط", "حرج — وصلت للحد الأقصى"],
-    scores: [3, 2, 1, 0],
-    colors: ["#B1C6A5", "#B89EC4", "#E57F5E", "#D4694A"]
-  },
-  {
-    text: "جسمك يرسل لك إشارات وتنبيهات.. هل تنصت لها حقاً؟",
-    opts: ["نعم — أتفقد حالي يومياً", "أحياناً — عندما يشتد التعب", "نادراً — لا أملك الوقت", "لا أشعر بشيء.. صرت منفصلاً عن جسدي"],
-    scores: [3, 2, 1, 0],
-    colors: ["#B1C6A5", "#8FAF88", "#E57F5E", "#D4694A"]
-  },
-  {
-    text: "هل تحدثت مع أحد عن صحتك ونفسيتك في آخر 3 أشهر؟",
-    opts: ["نعم — مع معالج أو مدرب", "نعم — مع صديق مقرب", "لا — أبقيها لنفسي", "لا — ولن أفعل"],
-    scores: [3, 2, 1, 0],
-    colors: ["#8FAF88", "#B1C6A5", "#B89EC4", "#D4694A"]
-  },
-  {
-    text: "لو كانت صحتك مقياساً في شركتك، فما هو وضعها الآن؟",
-    opts: ["نمو مستمر 📈", "ثابتة بلا نمو", "في تراجع — تحتاج تدخلاً", "لم نصل لمرحلة الأرباح بعد 😬"],
-    scores: [3, 2, 1, 0],
-    colors: ["#B1C6A5", "#8FAF88", "#E57F5E", "#D4694A"]
-  }
-];
+      {
+        text: "كم ساعة نمت ليلة البارحة؟",
+        opts: ["أقل من 4 ساعات", "4–5 ساعات", "6 ساعات", "7 ساعات أو أكثر"],
+        scores: [0, 1, 2, 3],
+        colors: ["#D4694A", "#E57F5E", "#8FAF88", "#B1C6A5"]
+      },
+      {
+        text: "متى كانت آخر مرة أخذت فيها إجازة كاملة (بدون عمل أو رسائل)؟",
+        opts: ["هذا الأسبوع", "هذا الشهر", "أكثر من شهر", "صراحةً لا أتذكر"],
+        scores: [3, 2, 1, 0],
+        colors: ["#B1C6A5", "#8FAF88", "#E57F5E", "#D4694A"]
+      },
+      {
+        text: "كيف تقيِّم مستوى ضغطك الحالي؟",
+        opts: ["منخفض — أنا بخير", "مقبول — أستطيع إدارته", "مرتفع — أعمل بالأدرينالين فقط", "حرج — وصلت للحد الأقصى"],
+        scores: [3, 2, 1, 0],
+        colors: ["#B1C6A5", "#B89EC4", "#E57F5E", "#D4694A"]
+      },
+      {
+        text: "جسمك يرسل لك إشارات وتنبيهات.. هل تنصت لها حقاً؟",
+        opts: ["نعم — أتفقد حالي يومياً", "أحياناً — عندما يشتد التعب", "نادراً — لا أملك الوقت", "لا أشعر بشيء.. صرت منفصلاً عن جسدي"],
+        scores: [3, 2, 1, 0],
+        colors: ["#B1C6A5", "#8FAF88", "#E57F5E", "#D4694A"]
+      },
+      {
+        text: "هل تحدثت مع أحد عن صحتك ونفسيتك في آخر 3 أشهر؟",
+        opts: ["نعم — مع معالج أو مدرب", "نعم — مع صديق مقرب", "لا — أبقيها لنفسي", "لا — ولن أفعل"],
+        scores: [3, 2, 1, 0],
+        colors: ["#8FAF88", "#B1C6A5", "#B89EC4", "#D4694A"]
+      },
+      {
+        text: "لو كانت صحتك مقياساً في شركتك، فما هو وضعها الآن؟",
+        opts: ["نمو مستمر 📈", "ثابتة بلا نمو", "في تراجع — تحتاج تدخلاً", "لم نصل لمرحلة الأرباح بعد 😬"],
+        scores: [3, 2, 1, 0],
+        colors: ["#B1C6A5", "#8FAF88", "#E57F5E", "#D4694A"]
+      }
+    ];
 
-   const Profiles = [
-  {
-    min: 0, max: 5, pct: 15, color: "#D4694A", label: "شحن حرج",
-    title: "جسمك يطلب المساعدة.. <em>منذ فترة طويلة.</em>",
-    cards: [
-      { 
-        icon: "😴", 
-        bg: "rgba(212,105,74,.08)", 
-        h: "ديون النوم تتراكم", 
-        p: "النوم لأقل من 5 ساعات باستمرار يضعف جودة قراراتك بنفس أثر الكحول. شركتك تدفع الثمن المعرفي كل يوم." 
+    const Profiles = [
+      {
+        min: 0, max: 5, pct: 15, color: "#D4694A", label: "شحن حرج",
+        title: "جسمك يطلب المساعدة.. <em>منذ فترة طويلة.</em>",
+        cards: [
+          {
+            icon: "😴",
+            bg: "rgba(212,105,74,.08)",
+            h: "ديون النوم تتراكم",
+            p: "النوم لأقل من 5 ساعات باستمرار يضعف جودة قراراتك بنفس أثر الكحول. شركتك تدفع الثمن المعرفي كل يوم."
+          },
+          {
+            icon: "⚡",
+            bg: "rgba(212,105,74,.08)",
+            h: "تعمل بالأدرينالين لا بالطاقة",
+            p: "الأدرينالين يعطيك شعوراً زائفاً بالإنتاجية، لكنه جهاز الطوارئ في جسمك؛ وله حد لا يجب تجاوزه."
+          },
+          {
+            icon: "🧠",
+            bg: "rgba(184,158,196,.12)",
+            h: "73% من المؤسسين في نفس مكانك",
+            p: "الفرق الوحيد هو أن من يتعامل مع الضغط مبكراً، يحافظ على استمرارية شركته لفترة أطول بكثير."
+          }
+        ],
+        oneThingTitle: "أعطِ نفسك فرصة لمحادثة واحدة صادقة؛ بدون أداء، وبدون قناع المستثمر. <em>حياة هي هذا المكان.</em>"
       },
-      { 
-        icon: "⚡", 
-        bg: "rgba(212,105,74,.08)", 
-        h: "تعمل بالأدرينالين لا بالطاقة", 
-        p: "الأدرينالين يعطيك شعوراً زائفاً بالإنتاجية، لكنه جهاز الطوارئ في جسمك؛ وله حد لا يجب تجاوزه." 
+      {
+        min: 6, max: 10, pct: 38, color: "#E57F5E", label: "شحن منخفض",
+        title: "أنت تعمل.. ولكن <em>العمل لا يعني الازدهار بالضرورة.</em>",
+        cards: [
+          {
+            icon: "🔁",
+            bg: "rgba(212,105,74,.08)",
+            h: "أنت في حلقة الصيانة",
+            p: "كل شيء يسير بشكل اعتيادي حتى يُضاف ضغط جديد. أسبوع سيء واحد يكفي لانهيار التوازن، وأنت تدرك ذلك جيداً."
+          },
+          {
+            icon: "📵",
+            bg: "rgba(143,175,136,.12)",
+            h: "الراحة استراتيجية وليست مكافأة",
+            p: "المؤسسون المستمرون لعقود لا يرتاحون أقل، بل يحمون أوقات راحتهم بصرامة وبأسلوب مختلف."
+          },
+          {
+            icon: "🔍",
+            bg: "rgba(184,158,196,.12)",
+            h: "جسمك يعرف ما تحتاجه",
+            p: "أجبت بـ'أحياناً' على سؤال الإشارات؛ تلك الـ'أحياناً' هي نقطة البداية الفعلية لاستعادة توازنك."
+          }
+        ],
+        oneThingTitle: "خصص 10 دقائق مراجعة شخصية كل أسبوع؛ بخصوصية، وصدق، وتتبُّع. <em>من هنا تبدأ رحلة حياة.</em>"
       },
-      { 
-        icon: "🧠", 
-        bg: "rgba(184,158,196,.12)", 
-        h: "73% من المؤسسين في نفس مكانك", 
-        p: "الفرق الوحيد هو أن من يتعامل مع الضغط مبكراً، يحافظ على استمرارية شركته لفترة أطول بكثير." 
+      {
+        min: 11, max: 14, pct: 62, color: "#B89EC4", label: "شحن متوسط",
+        title: "أداؤك أفضل من الأغلبية.. <em>لنحافظ على هذا المستوى.</em>",
+        cards: [
+          {
+            icon: "✅",
+            bg: "rgba(143,175,136,.12)",
+            h: "لديك وعي عالٍ وهذا نادر",
+            p: "غالبية المؤسسين في هذا المجال أجابوا بشكل أسوأ. مجرد الانتباه لصحتك يمنحك أفضلية تنافسية كبيرة."
+          },
+          {
+            icon: "📈",
+            bg: "rgba(143,175,136,.12)",
+            h: "الوقاية أرخص من التعافي",
+            p: "الاحتراق الوظيفي يكلفك من 3 إلى 6 أشهر من الإنتاجية المفقودة. أنت لم تصله بعد، فلا تنتظر حدوثه."
+          },
+          {
+            icon: "🤝",
+            bg: "rgba(184,158,196,.12)",
+            h: "المجتمع مورد غير مستغل",
+            p: "العزلة هي المضاعف الصامت لضغط المؤسسين. وجودك في مكان يتفهم ضغوطك المزمنة سيحدث فرقاً هائلاً."
+          }
+        ],
+        oneThingTitle: "حافظ على انتظامك. <em>حياة تساعدك على تتبع صحتك قبل أن تتحول إلى أزمة.</em>"
+      },
+      {
+        min: 15, max: 18, pct: 88, color: "#8FAF88", label: "شحن قوي",
+        title: "أنت من <em>الفئة النادرة.</em> احمِ هذا التوازن.",
+        cards: [
+          {
+            icon: "💚",
+            bg: "rgba(143,175,136,.12)",
+            h: "أخذت الأساسيات بجدية",
+            p: "النوم، الحدود الشخصية، الدعم النفسي؛ لديك الركائز الأساسية، وهذا أمر غير شائع إطلاقاً في أوساط العمل."
+          },
+          {
+            icon: "⚠️",
+            bg: "rgba(212,105,74,.08)",
+            h: "ربع سنوي صعب قد يمحو كل شيء",
+            p: "التوسع، التمويل، أو أزمات الفريق قد تؤدي لتآكل العادات سريعاً. تثبيت النظام قبل الأوقات الصعبة هو الخطوة القادمة."
+          },
+          {
+            icon: "🌍",
+            bg: "rgba(184,158,196,.12)",
+            h: "أنت النموذج المثالي لفريقك",
+            p: "ثقافة صحة المؤسس تنتقل تلقائياً للموظفين. بحماية صحتك، أنت تضع معياراً صحياً لكل من حولك."
+          }
+        ],
+        oneThingTitle: "<em>شارك هذا الوعي مع شريكك أو فريقك.</em> الثقافة الصحية تبدأ من الهرم."
       }
-    ],
-    oneThingTitle: "أعطِ نفسك فرصة لمحادثة واحدة صادقة؛ بدون أداء، وبدون قناع المستثمر. <em>حياة هي هذا المكان.</em>"
-  },
-  {
-    min: 6, max: 10, pct: 38, color: "#E57F5E", label: "شحن منخفض",
-    title: "أنت تعمل.. ولكن <em>العمل لا يعني الازدهار بالضرورة.</em>",
-    cards: [
-      { 
-        icon: "🔁", 
-        bg: "rgba(212,105,74,.08)", 
-        h: "أنت في حلقة الصيانة", 
-        p: "كل شيء يسير بشكل اعتيادي حتى يُضاف ضغط جديد. أسبوع سيء واحد يكفي لانهيار التوازن، وأنت تدرك ذلك جيداً." 
-      },
-      { 
-        icon: "📵", 
-        bg: "rgba(143,175,136,.12)", 
-        h: "الراحة استراتيجية وليست مكافأة", 
-        p: "المؤسسون المستمرون لعقود لا يرتاحون أقل، بل يحمون أوقات راحتهم بصرامة وبأسلوب مختلف." 
-      },
-      { 
-        icon: "🔍", 
-        bg: "rgba(184,158,196,.12)", 
-        h: "جسمك يعرف ما تحتاجه", 
-        p: "أجبت بـ'أحياناً' على سؤال الإشارات؛ تلك الـ'أحياناً' هي نقطة البداية الفعلية لاستعادة توازنك." 
-      }
-    ],
-    oneThingTitle: "خصص 10 دقائق مراجعة شخصية كل أسبوع؛ بخصوصية، وصدق، وتتبُّع. <em>من هنا تبدأ رحلة حياة.</em>"
-  },
-  {
-    min: 11, max: 14, pct: 62, color: "#B89EC4", label: "شحن متوسط",
-    title: "أداؤك أفضل من الأغلبية.. <em>لنحافظ على هذا المستوى.</em>",
-    cards: [
-      { 
-        icon: "✅", 
-        bg: "rgba(143,175,136,.12)", 
-        h: "لديك وعي عالٍ وهذا نادر", 
-        p: "غالبية المؤسسين في هذا المجال أجابوا بشكل أسوأ. مجرد الانتباه لصحتك يمنحك أفضلية تنافسية كبيرة." 
-      },
-      { 
-        icon: "📈", 
-        bg: "rgba(143,175,136,.12)", 
-        h: "الوقاية أرخص من التعافي", 
-        p: "الاحتراق الوظيفي يكلفك من 3 إلى 6 أشهر من الإنتاجية المفقودة. أنت لم تصله بعد، فلا تنتظر حدوثه." 
-      },
-      { 
-        icon: "🤝", 
-        bg: "rgba(184,158,196,.12)", 
-        h: "المجتمع مورد غير مستغل", 
-        p: "العزلة هي المضاعف الصامت لضغط المؤسسين. وجودك في مكان يتفهم ضغوطك المزمنة سيحدث فرقاً هائلاً." 
-      }
-    ],
-    oneThingTitle: "حافظ على انتظامك. <em>حياة تساعدك على تتبع صحتك قبل أن تتحول إلى أزمة.</em>"
-  },
-  {
-    min: 15, max: 18, pct: 88, color: "#8FAF88", label: "شحن قوي",
-    title: "أنت من <em>الفئة النادرة.</em> احمِ هذا التوازن.",
-    cards: [
-      { 
-        icon: "💚", 
-        bg: "rgba(143,175,136,.12)", 
-        h: "أخذت الأساسيات بجدية", 
-        p: "النوم، الحدود الشخصية، الدعم النفسي؛ لديك الركائز الأساسية، وهذا أمر غير شائع إطلاقاً في أوساط العمل." 
-      },
-      { 
-        icon: "⚠️", 
-        bg: "rgba(212,105,74,.08)", 
-        h: "ربع سنوي صعب قد يمحو كل شيء", 
-        p: "التوسع، التمويل، أو أزمات الفريق قد تؤدي لتآكل العادات سريعاً. تثبيت النظام قبل الأوقات الصعبة هو الخطوة القادمة." 
-      },
-      { 
-        icon: "🌍", 
-        bg: "rgba(184,158,196,.12)", 
-        h: "أنت النموذج المثالي لفريقك", 
-        p: "ثقافة صحة المؤسس تنتقل تلقائياً للموظفين. بحماية صحتك، أنت تضع معياراً صحياً لكل من حولك." 
-      }
-    ],
-    oneThingTitle: "<em>شارك هذا الوعي مع شريكك أو فريقك.</em> الثقافة الصحية تبدأ من الهرم."
-  }
-];
+    ];
 
     /* ══════════════════════════════
        STATE
@@ -1613,10 +1664,10 @@
 
     function showPublicStats() {
       goTo('page-public-stats');
-      
+
       const results = loadResults();
       const total = results.length;
-      
+
       const traitsEn = [
         { good: "Strong drive under pressure", bad: "Severe burnout and cognitive decline risk" },
         { good: "Functional and surviving", bad: "One bad week away from crashing" },
@@ -1629,15 +1680,15 @@
         { good: "يتصرف بوعي أفضل من الأغلبية", bad: "يحتاج لتعزيز جودة الراحة والاسترخاء" },
         { good: "مرونة وانتاجية صحية طويلة الأمد", bad: "تتطلب مجهوداً مستمراً للحفاظ عليها" }
       ];
-      
+
       let html = `<div style="text-align:center; padding: 20px 0; color:rgba(255,255,255,0.6);"><span>إجمالي المشاركين</span>: <strong style="color:white;font-size:18px;">${total}</strong></div>`;
-      
+
       html += `<div style="display:flex; flex-direction:column; gap:16px; padding-bottom:40px;">`;
-      
+
       Profiles.forEach((p, i) => {
         let count = results.filter(r => r.level === p.label).length;
         let trait = currentLang === 'en' ? traitsEn[i] : traitsAr[i];
-        
+
         html += `
           <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:20px; display:flex; flex-wrap:wrap; align-items:center; gap:20px;">
             <div style="flex: 1 1 200px; display:flex; align-items:center; gap:15px;">
@@ -1663,7 +1714,7 @@
       });
       html += `</div>`;
       document.getElementById('public-stats-container').innerHTML = html;
-      
+
       trDOM(document.getElementById('page-public-stats'));
     }
 
@@ -1828,197 +1879,197 @@
     renderPips();
   </script>
 
-<script>
-  let currentLang = 'ar';
-  
-  // English questions & profiles overrides
-  const enQ_texts = [
-    "How many hours did you sleep last night?",
-    "When was the last time you took a full day off — no work, no messages?",
-    "How do you rate your stress level right now?",
-    "Your body sends you signals. Do you actually listen?",
-    "Have you talked to anyone about your health and mood in the last 3 months?",
-    "If your health was a metric in your company, how would it be right now?"
-  ];
-  const enQ_opts = [
-    ["Less than 4 hours", "4–5 hours", "6 hours", "7 or more"],
-    ["This week", "This month", "More than a month", "I honestly can't remember"],
-    ["Low — I'm fine", "Manageable", "High — running on adrenaline", "Critical — reached the limit"],
-    ["Yes — I check in daily", "Sometimes — when it gets loud", "Rarely — no time", "What signals? I'm numb"],
-    ["Yes — therapist or coach", "Yes — close friend", "No — only to family", "No — and I won't"],
-    ["Steady growth 📈", "Stagnant, no growth", "Declining — needs intervention", "Pre-revenue 😬"]
-  ];
-  const enP_labels = ["Critical Charge", "Low Charge", "Medium Charge", "Strong Charge"];
-  const enP_titles = [
-    "Your body is asking for help... <em>for a while.</em>",
-    "You work. But <em>working isn't thriving.</em>",
-    "Better than most. <em>Let's keep it that way.</em>",
-    "You are a <em>rare breed.</em> Protect this."
-  ];
-  const enP_oneThing = [
-    "Give yourself one honest conversation — no performance, no investor mask. <em>HYAT is that place.</em>",
-    "10 mins personal review every week — private, honest, tracked. <em>From there HYAT starts.</em>",
-    "Stay consistent. <em>HYAT helps you track your health before it becomes a crisis.</em>",
-    "<em>Share this with your partner or team.</em> Culture starts with you."
-  ];
-  const enP_cards = [
-    [
-      {h: "Sleep debt is accumulating", p: "Consistently under 5hrs impairs decisions like alcohol. Your company pays the cognitive cost daily."},
-      {h: "Running on adrenaline, not energy", p: "Adrenaline looks like productivity. But it's an emergency system — with a limit."},
-      {h: "73% of founders are here", p: "The only difference: those who handle it early keep their company alive much longer."}
-    ],
-    [
-      {h: "You are in a maintenance loop", p: "Everything works until one thing is added. One bad week is enough — and you know it."},
-      {h: "Rest is strategy, not reward", p: "Founders who last 10 years don't rest less — they protect their rest differently."},
-      {h: "Your body knows what you need", p: "You answered 'Sometimes' to signals. That 'sometimes' is the actual starting point."}
-    ],
-    [
-      {h: "You have awareness — rare", p: "Most founders in the room answered worse. Attention alone puts you ahead."},
-      {h: "Prevention is cheaper than recovery", p: "Burnout costs 3-6 months. You're not there yet — don't wait until you are."},
-      {h: "Community is untapped", p: "Isolation is the silent multiplier. A place that understands chronic stress changes everything."}
-    ],
-    [
-      {h: "You take basics seriously", p: "Sleep, boundaries, support — you have pillars. This is not common here at all."},
-      {h: "One hard quarter erases this", p: "Scaling, funding, team crisis — habits erode fast. Systems before hard times is key."},
-      {h: "You can model this for your team", p: "Founder health culture spreads down. If you protect yours, you normalize it for everyone."}
-    ]
-  ];
+  <script>
+    let currentLang = 'ar';
 
-  // Static translations dictionary
-  const dict = {
-    "لوحة التحكم ↗": "Dashboard ↗",
-    "← الرئيسية": "← Home",
-    "اليوم العالمي للصحة · 7 أبريل": "World Health Day · Apr 7",
-    "ما هي\nبطارية جسمك؟": "What is your\nbody battery?",
-    "6 أسئلة صريحة، نتيجة فورية، بدون اسم ولا حساب. اكتشف أين تقف صحتك كمؤسس.": "6 honest questions, instant result, completely anonymous. Find out where your health stands as a founder.",
-    "من المؤسسين يعانون\nالإرهاق بصمت": "of founders suffer\nsilent burnout",
-    "فقط يطلبون\nأي دعم": "only ask for\nany support",
-    "من فشل الشركات يبدأ\nبصحة المؤسس": "of startup failures begin\nwith founder's health",
-    "من المؤسسين يعانون": "of founders suffer",
-    "الإرهاق بصمت": "silent burnout",
-    "فقط يطلبون": "only ask for",
-    "أي دعم": "support",
-    "من فشل الشركات يبدأ": "of startup failures begin",
-    "بصحة المؤسس": "with founder health",
-    "لا يوجد مشاركون بعد.": "No participants yet.",
-    "شارك الرابط وانتظر النتائج هنا.": "Share the link and wait for results.",
-    "ابدأ الاختبار ←": "Start Quiz →",
-    "مجهول الهوية تماماً — اسمك لا يُجمع أبداً": "Completely anonymous — your name is never collected",
-    "التالي ←": "Next →",
-    "أظهر نتيجتي ←": "Show Result →",
-    "مجهول الهوية — لا يتم جمع اسمك": "Anonymous — your name is not collected",
-    "نتيجتك": "Your Result",
-    "جاري الحساب…": "Calculating...",
-    "الشيء الواحد الذي تفعله الآن": "The ONE thing to do now",
-    "انضم لقائمة انتظار حياة ←": "Join HYAT waitlist →",
-    "شارك نتيجتي": "Share my result",
-    "تحليلات المشاركين": "Participants Analytics",
-    "أعيد الاختبار": "Retake Quiz",
-    "لوحة تحكم حياة": "HYAT Dashboard",
-    "أدخل الرمز السري للوصول لنتائج المشاركين": "Enter PIN to access results",
-    "دخول ←": "Enter →",
-    "الرمز الافتراضي: 1234": "Default PIN: 1234",
-    "نتائج الجلسة": "Session Results",
-    "آخر تحديث: الآن": "Last update: Now",
-    "توزيع مستويات البطارية": "Battery Level Distribution",
-    "تفصيل الإجابات لكل سؤال": "Answers Breakdown",
-    "إحصائيات المشاركين": "Participants Stats",
-    "← الرجوع للنتيجة": "← Back to Result",
-    "مشارك": "participant(s)",
-    "نصيحة:": "Tip:",
-    "نقطة القوة": "Strength",
-    "نقطة الضعف": "Weakness",
-    "إجمالي المشاركين": "Total Participants",
-    "سجل المشاركين": "Participants Log",
-    "متوسط البطارية": "Avg Battery",
-    "متوسط النقاط / 18": "Avg Score / 18",
-    "الأكثر شيوعاً": "Most Common",
-    "تحديث البيانات ↻": "Refresh Data ↻",
-    "تصدير CSV": "Export CSV",
-    "مسح كل البيانات": "Clear All Data",
-    "لا يوجد مشاركون بعد.\nشارك الرابط وانتظر النتائج هنا.": "No participants yet.\nShare the link and wait for results."
-  };
+    // English questions & profiles overrides
+    const enQ_texts = [
+      "How many hours did you sleep last night?",
+      "When was the last time you took a full day off — no work, no messages?",
+      "How do you rate your stress level right now?",
+      "Your body sends you signals. Do you actually listen?",
+      "Have you talked to anyone about your health and mood in the last 3 months?",
+      "If your health was a metric in your company, how would it be right now?"
+    ];
+    const enQ_opts = [
+      ["Less than 4 hours", "4–5 hours", "6 hours", "7 or more"],
+      ["This week", "This month", "More than a month", "I honestly can't remember"],
+      ["Low — I'm fine", "Manageable", "High — running on adrenaline", "Critical — reached the limit"],
+      ["Yes — I check in daily", "Sometimes — when it gets loud", "Rarely — no time", "What signals? I'm numb"],
+      ["Yes — therapist or coach", "Yes — close friend", "No — only to family", "No — and I won't"],
+      ["Steady growth 📈", "Stagnant, no growth", "Declining — needs intervention", "Pre-revenue 😬"]
+    ];
+    const enP_labels = ["Critical Charge", "Low Charge", "Medium Charge", "Strong Charge"];
+    const enP_titles = [
+      "Your body is asking for help... <em>for a while.</em>",
+      "You work. But <em>working isn't thriving.</em>",
+      "Better than most. <em>Let's keep it that way.</em>",
+      "You are a <em>rare breed.</em> Protect this."
+    ];
+    const enP_oneThing = [
+      "Give yourself one honest conversation — no performance, no investor mask. <em>HYAT is that place.</em>",
+      "10 mins personal review every week — private, honest, tracked. <em>From there HYAT starts.</em>",
+      "Stay consistent. <em>HYAT helps you track your health before it becomes a crisis.</em>",
+      "<em>Share this with your partner or team.</em> Culture starts with you."
+    ];
+    const enP_cards = [
+      [
+        { h: "Sleep debt is accumulating", p: "Consistently under 5hrs impairs decisions like alcohol. Your company pays the cognitive cost daily." },
+        { h: "Running on adrenaline, not energy", p: "Adrenaline looks like productivity. But it's an emergency system — with a limit." },
+        { h: "73% of founders are here", p: "The only difference: those who handle it early keep their company alive much longer." }
+      ],
+      [
+        { h: "You are in a maintenance loop", p: "Everything works until one thing is added. One bad week is enough — and you know it." },
+        { h: "Rest is strategy, not reward", p: "Founders who last 10 years don't rest less — they protect their rest differently." },
+        { h: "Your body knows what you need", p: "You answered 'Sometimes' to signals. That 'sometimes' is the actual starting point." }
+      ],
+      [
+        { h: "You have awareness — rare", p: "Most founders in the room answered worse. Attention alone puts you ahead." },
+        { h: "Prevention is cheaper than recovery", p: "Burnout costs 3-6 months. You're not there yet — don't wait until you are." },
+        { h: "Community is untapped", p: "Isolation is the silent multiplier. A place that understands chronic stress changes everything." }
+      ],
+      [
+        { h: "You take basics seriously", p: "Sleep, boundaries, support — you have pillars. This is not common here at all." },
+        { h: "One hard quarter erases this", p: "Scaling, funding, team crisis — habits erode fast. Systems before hard times is key." },
+        { h: "You can model this for your team", p: "Founder health culture spreads down. If you protect yours, you normalize it for everyone." }
+      ]
+    ];
 
-  function trDOM(node) {
-    if (node.nodeType === 3) {
-      let txt = node.nodeValue.trim();
-      if (!txt) return;
-      if (!node.originalTxt) node.originalTxt = txt;
-      
-      let baseTxt = node.originalTxt;
-      
-      // Dynamic replacements
-      if (baseTxt.startsWith("سؤال ") && baseTxt.includes(" من ")) {
-        if(currentLang === 'en') {
-          node.nodeValue = baseTxt.replace("سؤال ", "Question ").replace(" من ", " of ");
-        } else {
+    // Static translations dictionary
+    const dict = {
+      "لوحة التحكم ↗": "Dashboard ↗",
+      "← الرئيسية": "← Home",
+      "اليوم العالمي للصحة · 7 أبريل": "World Health Day · Apr 7",
+      "ما هي\nبطارية جسمك؟": "What is your\nbody battery?",
+      "6 أسئلة صريحة، نتيجة فورية، بدون اسم ولا حساب. اكتشف أين تقف صحتك كمؤسس.": "6 honest questions, instant result, completely anonymous. Find out where your health stands as a founder.",
+      "من المؤسسين يعانون\nالإرهاق بصمت": "of founders suffer\nsilent burnout",
+      "فقط يطلبون\nأي دعم": "only ask for\nany support",
+      "من فشل الشركات يبدأ\nبصحة المؤسس": "of startup failures begin\nwith founder's health",
+      "من المؤسسين يعانون": "of founders suffer",
+      "الإرهاق بصمت": "silent burnout",
+      "فقط يطلبون": "only ask for",
+      "أي دعم": "support",
+      "من فشل الشركات يبدأ": "of startup failures begin",
+      "بصحة المؤسس": "with founder health",
+      "لا يوجد مشاركون بعد.": "No participants yet.",
+      "شارك الرابط وانتظر النتائج هنا.": "Share the link and wait for results.",
+      "ابدأ الاختبار ←": "Start Quiz →",
+      "مجهول الهوية تماماً — اسمك لا يُجمع أبداً": "Completely anonymous — your name is never collected",
+      "التالي ←": "Next →",
+      "أظهر نتيجتي ←": "Show Result →",
+      "مجهول الهوية — لا يتم جمع اسمك": "Anonymous — your name is not collected",
+      "نتيجتك": "Your Result",
+      "جاري الحساب…": "Calculating...",
+      "الشيء الواحد الذي تفعله الآن": "The ONE thing to do now",
+      "انضم لقائمة انتظار حياة ←": "Join HYAT waitlist →",
+      "شارك نتيجتي": "Share my result",
+      "تحليلات المشاركين": "Participants Analytics",
+      "أعِد الاختبار": "Retake Quiz",
+      "لوحة تحكم حياة": "HYAT Dashboard",
+      "أدخل الرمز السري للوصول لنتائج المشاركين": "Enter PIN to access results",
+      "دخول ←": "Enter →",
+      "الرمز الافتراضي: 1234": "Default PIN: 1234",
+      "نتائج الجلسة": "Session Results",
+      "آخر تحديث: الآن": "Last update: Now",
+      "توزيع مستويات البطارية": "Battery Level Distribution",
+      "تفصيل الإجابات لكل سؤال": "Answers Breakdown",
+      "إحصائيات المشاركين": "Participants Stats",
+      "← الرجوع للنتيجة": "← Back to Result",
+      "مشارك": "participant(s)",
+      "نصيحة:": "Tip:",
+      "نقطة القوة": "Strength",
+      "نقطة الضعف": "Weakness",
+      "إجمالي المشاركين": "Total Participants",
+      "سجل المشاركين": "Participants Log",
+      "متوسط البطارية": "Avg Battery",
+      "متوسط النقاط / 18": "Avg Score / 18",
+      "الأكثر شيوعاً": "Most Common",
+      "تحديث البيانات ↻": "Refresh Data ↻",
+      "تصدير CSV": "Export CSV",
+      "مسح كل البيانات": "Clear All Data",
+      "لا يوجد مشاركون بعد.\nشارك الرابط وانتظر النتائج هنا.": "No participants yet.\nShare the link and wait for results."
+    };
+
+    function trDOM(node) {
+      if (node.nodeType === 3) {
+        let txt = node.nodeValue.trim();
+        if (!txt) return;
+        if (!node.originalTxt) node.originalTxt = txt;
+
+        let baseTxt = node.originalTxt;
+
+        // Dynamic replacements
+        if (baseTxt.startsWith("سؤال ") && baseTxt.includes(" من ")) {
+          if (currentLang === 'en') {
+            node.nodeValue = baseTxt.replace("سؤال ", "Question ").replace(" من ", " of ");
+          } else {
+            node.nodeValue = baseTxt;
+          }
+          return;
+        }
+
+        if (currentLang === 'en' && dict[baseTxt]) {
+          node.nodeValue = dict[baseTxt];
+        } else if (currentLang === 'ar') {
           node.nodeValue = baseTxt;
         }
-        return;
-      }
-
-      if (currentLang === 'en' && dict[baseTxt]) {
-        node.nodeValue = dict[baseTxt];
-      } else if (currentLang === 'ar') {
-        node.nodeValue = baseTxt;
-      }
-    } else {
-      if(node.tagName === 'SCRIPT' || node.tagName === 'STYLE') return;
-      for (let i = 0; i < node.childNodes.length; i++) {
-        trDOM(node.childNodes[i]);
+      } else {
+        if (node.tagName === 'SCRIPT' || node.tagName === 'STYLE') return;
+        for (let i = 0; i < node.childNodes.length; i++) {
+          trDOM(node.childNodes[i]);
+        }
       }
     }
-  }
 
-  // Backup original Arrays
-  const arQ_texts = Qs.map(q => q.text);
-  const arQ_opts = Qs.map(q => [...q.opts]);
-  const arP_labels = Profiles.map(p => p.label);
-  const arP_titles = Profiles.map(p => p.title);
-  const arP_oneThing = Profiles.map(p => p.oneThingTitle);
-  const arP_cards = Profiles.map(p => p.cards.map(c => ({...c})));
+    // Backup original Arrays
+    const arQ_texts = Qs.map(q => q.text);
+    const arQ_opts = Qs.map(q => [...q.opts]);
+    const arP_labels = Profiles.map(p => p.label);
+    const arP_titles = Profiles.map(p => p.title);
+    const arP_oneThing = Profiles.map(p => p.oneThingTitle);
+    const arP_cards = Profiles.map(p => p.cards.map(c => ({ ...c })));
 
-  function toggleLang(e) {
-    if(e) { e.preventDefault(); e.stopPropagation(); }
-    currentLang = currentLang === 'ar' ? 'en' : 'ar';
-    document.documentElement.lang = currentLang;
-    document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-    document.querySelectorAll('.lang-ind').forEach(el => el.textContent = currentLang === 'ar' ? 'EN' : 'عربي');
-    
-    // Update data objects
-    if(currentLang === 'en') {
-      Qs.forEach((q, i) => { q.text = enQ_texts[i]; q.opts = [...enQ_opts[i]]; });
-      Profiles.forEach((p, i) => { 
-        p.label = enP_labels[i]; p.title = enP_titles[i]; p.oneThingTitle = enP_oneThing[i]; 
-        p.cards.forEach((c, ci) => { c.h = enP_cards[i][ci].h; c.p = enP_cards[i][ci].p; });
-      });
-      // specific fixes for tags
-      document.querySelector('.landing-tag').innerHTML = '<span class="tag-dot"></span> World Health Day · Apr 7';
-      document.querySelector('.landing-h1').innerHTML = 'What is your<br><em>body battery?</em>';
-      document.querySelector('.admin-title').innerHTML = 'Session <em>Results</em>';
-      if(document.querySelector('#public-stats-title')) document.querySelector('#public-stats-title').innerHTML = 'Participants <em>Stats</em>';
-    } else {
-      Qs.forEach((q, i) => { q.text = arQ_texts[i]; q.opts = [...arQ_opts[i]]; });
-      Profiles.forEach((p, i) => { 
-        p.label = arP_labels[i]; p.title = arP_titles[i]; p.oneThingTitle = arP_oneThing[i]; 
-        p.cards.forEach((c, ci) => { c.h = arP_cards[i][ci].h; c.p = arP_cards[i][ci].p; });
-      });
-      // specific fixes for tags
-      document.querySelector('.landing-tag').innerHTML = '<span class="tag-dot"></span> اليوم العالمي للصحة · 7 أبريل';
-      document.querySelector('.landing-h1').innerHTML = 'ما هي<br><em>بطارية جسمك؟</em>';
-      document.querySelector('.admin-title').innerHTML = 'نتائج <em>الجلسة</em>';
-      if(document.querySelector('#public-stats-title')) document.querySelector('#public-stats-title').innerHTML = 'إحصائيات <em>المشاركين</em>';
+    function toggleLang(e) {
+      if (e) { e.preventDefault(); e.stopPropagation(); }
+      currentLang = currentLang === 'ar' ? 'en' : 'ar';
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+      document.querySelectorAll('.lang-ind').forEach(el => el.textContent = currentLang === 'ar' ? 'EN' : 'عربي');
+
+      // Update data objects
+      if (currentLang === 'en') {
+        Qs.forEach((q, i) => { q.text = enQ_texts[i]; q.opts = [...enQ_opts[i]]; });
+        Profiles.forEach((p, i) => {
+          p.label = enP_labels[i]; p.title = enP_titles[i]; p.oneThingTitle = enP_oneThing[i];
+          p.cards.forEach((c, ci) => { c.h = enP_cards[i][ci].h; c.p = enP_cards[i][ci].p; });
+        });
+        // specific fixes for tags
+        document.querySelector('.landing-tag').innerHTML = '<span class="tag-dot"></span> World Health Day · Apr 7';
+        document.querySelector('.landing-h1').innerHTML = 'What is your<br><em>body battery?</em>';
+        document.querySelector('.admin-title').innerHTML = 'Session <em>Results</em>';
+        if (document.querySelector('#public-stats-title')) document.querySelector('#public-stats-title').innerHTML = 'Participants <em>Stats</em>';
+      } else {
+        Qs.forEach((q, i) => { q.text = arQ_texts[i]; q.opts = [...arQ_opts[i]]; });
+        Profiles.forEach((p, i) => {
+          p.label = arP_labels[i]; p.title = arP_titles[i]; p.oneThingTitle = arP_oneThing[i];
+          p.cards.forEach((c, ci) => { c.h = arP_cards[i][ci].h; c.p = arP_cards[i][ci].p; });
+        });
+        // specific fixes for tags
+        document.querySelector('.landing-tag').innerHTML = '<span class="tag-dot"></span> اليوم العالمي للصحة · 7 أبريل';
+        document.querySelector('.landing-h1').innerHTML = 'ما هي<br><em>بطارية جسمك؟</em>';
+        document.querySelector('.admin-title').innerHTML = 'نتائج <em>الجلسة</em>';
+        if (document.querySelector('#public-stats-title')) document.querySelector('#public-stats-title').innerHTML = 'إحصائيات <em>المشاركين</em>';
+      }
+
+      trDOM(document.body);
+
+      // Refresh current view
+      if (document.getElementById('page-quiz').classList.contains('active')) renderQ();
+      if (document.getElementById('page-admin').classList.contains('active')) refreshDash();
+      if (document.getElementById('page-results').classList.contains('active')) showResults(); // will force recalculate and redraw with correct language
+      if (document.getElementById('page-public-stats') && document.getElementById('page-public-stats').classList.contains('active')) showPublicStats();
     }
-
-    trDOM(document.body);
-    
-    // Refresh current view
-    if(document.getElementById('page-quiz').classList.contains('active')) renderQ();
-    if(document.getElementById('page-admin').classList.contains('active')) refreshDash();
-    if(document.getElementById('page-results').classList.contains('active')) showResults(); // will force recalculate and redraw with correct language
-    if(document.getElementById('page-public-stats') && document.getElementById('page-public-stats').classList.contains('active')) showPublicStats();
-  }
-</script>
+  </script>
 </body>
 
 
